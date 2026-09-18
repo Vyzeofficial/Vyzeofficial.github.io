@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaTech — Tiers &amp; prices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#9aa4b0;
+--line:#272c34;--green:#1fc47a;--green-dim:#12331f;--red:#e6394b;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px;}
+a{color:var(--green);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,11,13,.92);backdrop-filter:blur(8px);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--red);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--green);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:17ch;}
+h1 em{font-style:normal;color:var(--green);}
+h1 .r{color:var(--red);font-style:normal;}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--green);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,196,122,.25);}
+.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--green);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+/* animation */
+.rise{opacity:0;transform:translateY(14px);}
+.rise.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise{opacity:1!important;transform:none!important;}}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.tab-btn{font-family:var(--body);font-size:0.89rem;padding:8px 14px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.18s;}
+.tab-btn[aria-selected="true"]{border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.tab-panel{display:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;}
+.tab-panel.active{display:block;animation:fade .3s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.spec-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.93rem;}
+.spec-row .k{color:var(--muted);}
+.spec-row .v{font-family:var(--display);font-size:0.89rem;text-align:right;}
+.pick{margin-top:16px;background:var(--surface-2);border-radius:9px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;}
+.pick .label{font-family:var(--display);font-size:0.7rem;letter-spacing:.05em;color:var(--green);}
+.pick .model{font-family:var(--display);font-weight:700;font-size:1.05rem;margin:2px 0 3px;}
+.pick .why{color:var(--muted);font-size:0.86rem;max-width:46ch;margin:0;}
+table{width:100%;border-collapse:collapse;}
+thead th{text-align:left;font-family:var(--display);font-weight:600;font-size:0.79rem;color:var(--muted);padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap;}
+tbody td{padding:12px;border-bottom:1px solid var(--line);font-size:0.89rem;vertical-align:top;}
+tbody tr{transition:background .18s;}
+tbody tr:hover{background:var(--surface);}
+.tier-name{font-family:var(--display);font-weight:700;color:var(--green);}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;transition:transform .2s ease,border-color .2s;}
+.price-card:hover{transform:translateY(-3px);border-color:var(--green);}
+.price-card .amount{font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--green);}
+.price-card p{color:var(--muted);font-size:0.86rem;margin:8px 0 0;}
+.self{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
+.self p{margin:0;color:var(--muted);font-size:0.9rem;max-width:52ch;}
+@media(max-width:640px){thead{display:none;}table,tbody,tr,td{display:block;width:100%;}
+tbody tr{border-bottom:2px solid var(--line);padding:8px 0;}tbody td{border-bottom:none;padding:5px 10px;}
+tbody td::before{content:attr(data-label);display:block;font-family:var(--display);font-size:.7rem;color:var(--muted);}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="./index.html">Nexa<b>Tech</b></a>
+<div class="links"><a class="" href="./index.html">Decoder</a><a class="on" href="./guide.html">Tiers &amp; prices</a><a class="" href="./evidence.html">Evidence</a></div>
+</div></nav>
+<div class="wrap">
+
+<header class="top">
+  <h1 class="rise">What you need, and what it should <em>cost</em>.</h1>
+  <p class="lede rise">Match the machine to how you'll actually use it, then check that against the price. A spec sheet is only overpriced or underpowered relative to a job.</p>
+</header>
+
+<section>
+  <h2 class="rise">What "good enough" looks like, by use case</h2>
+  <p class="section-note rise">The same spec sheet is overkill for one person and a bottleneck for another. Each tab ends with a current pick from an independent reviewer.</p>
+  <div class="tabs rise" role="tablist" id="cat-tabs"></div>
+  <div class="rise" id="cat-panels"></div>
+  <div class="self rise">
+    <p><strong>Want to pick your own?</strong> Skip the recommendations and browse benchmark-tested rankings yourself. RTINGS publishes measured battery, brightness, and performance figures rather than manufacturer claims.</p>
+    <a class="btn ghost" href="https://www.rtings.com/laptop/reviews/best/by-usage/college" target="_blank" rel="noopener">Browse tested rankings</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="rise">Performance tiers, honestly labeled</h2>
+  <p class="section-note rise">Listings rarely say which tier a machine belongs to. Match what's inside against this table before you match the price.</p>
+  <div class="rise" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>Tier</th><th>CPU</th><th>RAM</th><th>Storage</th><th>What it's actually for</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Tier"><span class="tier-name">Entry</span></td><td data-label="CPU">Intel N-series / Core i3, Ryzen 3</td><td data-label="RAM">8GB</td><td data-label="Storage">256GB SSD</td><td data-label="Use">Browsing, docs, video calls. Struggles past 15 tabs or any editing.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Everyday</span></td><td data-label="CPU">Core i5 / Ryzen 5, current gen</td><td data-label="RAM">16GB</td><td data-label="Storage">512GB SSD</td><td data-label="Use">Real multitasking, school and office work, light photo editing.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Performance</span></td><td data-label="CPU">Core i7 / Ryzen 7, or Apple M-series</td><td data-label="RAM">16&ndash;32GB</td><td data-label="Storage">1TB SSD</td><td data-label="Use">Video editing, coding, CAD, gaming with a real GPU.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Enthusiast</span></td><td data-label="CPU">Core i9 / Ryzen 9 + RTX 4070 or better</td><td data-label="RAM">32GB+</td><td data-label="Storage">1TB+ NVMe</td><td data-label="Use">3D rendering, high-end gaming, ML workloads.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="rise">What each price range should get you</h2>
+  <p class="section-note rise">If a listing costs noticeably less than its tier without a real sale attached, something on this list was cut. Find out what.</p>
+  <div class="price-grid">
+    <div class="price-card rise"><div class="amount">$400&ndash;600</div><p>Entry tier. Fine as a second machine or for basic school use. Expect a dim low-res screen, slow storage, and soldered RAM.</p></div>
+    <div class="price-card rise"><div class="amount">$700&ndash;900</div><p>Everyday tier done properly. The sweet spot for most students, and where price-per-performance peaks.</p></div>
+    <div class="price-card rise"><div class="amount">$1000&ndash;1500</div><p>Performance tier, or a premium everyday build with a better screen and battery. Watch for money spent on thinness instead of speed.</p></div>
+    <div class="price-card rise"><div class="amount">$1800+</div><p>Enthusiast tier or specialized work. At this price, weak cooling or 16GB RAM is a red flag, not a trade-off.</p></div>
+  </div>
+</section>
+
+<footer>NexaTech — built to help you compare specs, not to sell you a laptop. Buying links point to independent review guides; NexaTech earns nothing from them.</footer>
+</div>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*55)+'ms';io.observe(el);});
+
+const categories=[
+{id:"everyday",label:"Everyday / School",body:[["CPU","Core i5 or Ryzen 5, current gen"],["RAM","16GB minimum"],["Storage","512GB SSD"],["Screen","1080p, 300+ nits"],["Skip paying for","Discrete GPU, 4K panel"]],
+pick:{name:"ASUS Zenbook 14 OLED",why:"Core Ultra 7, 16GB, 12+ hours of real battery. Balances portability, screen and performance better than anything near its price.",url:"https://www.newegg.com/insider/best-laptops-for-college-students-in-2026/"}},
+{id:"cs",label:"CS / Development",body:[["CPU","Core i5\u2013i7 or Apple M-series"],["RAM","16GB, 32GB if you run VMs or containers"],["Storage","512GB\u20131TB SSD"],["Other","Keyboard and a 16:10 screen matter daily"],["Skip paying for","High-end GPU unless training models locally"]],
+pick:{name:"MacBook Pro 14 (M5)",why:"Reviewers rate the base M5 as enough for most coursework, with the M5 Pro the better call for heavier software development.",url:"https://www.bestlaptop.deals/articles/best-laptops-for-students-in-2026"}},
+{id:"creative",label:"Creative work",body:[["CPU","Core i7 / Ryzen 7 or Apple M-series"],["RAM","32GB for video, 16GB for photo"],["Storage","1TB SSD \u2014 media fills drives fast"],["Screen","100% sRGB or better"],["Skip paying for","Peak gaming clocks you won't sustain"]],
+pick:{name:"MSI Prestige 16 AI Evo",why:"Core Ultra 9 with 32GB, built around a color-accurate panel rather than a gaming GPU. The creative-major pick in Newegg's 2026 comparison.",url:"https://www.newegg.com/insider/best-laptops-for-college-students-in-2026/"}},
+{id:"gaming",label:"Gaming",body:[["GPU","RTX 4060 or better for 1080p high"],["CPU","Core i5/i7 or Ryzen 5/7 is plenty"],["RAM","16GB, 32GB if you stream"],["Cooling","Check sustained benchmarks, not peak"],["Watch for","Low-wattage versions of the same GPU"]],
+pick:{name:"Lenovo LOQ 15",why:"Ryzen 7 with a real RTX 5050, 16GB and 512GB. Named best budget gaming laptop \u2014 and it costs less than several fake 'gaming laptops' sold on Amazon.",url:"https://www.bestlaptop.deals/articles/best-gaming-laptops-for-students-in-2026"}},
+{id:"portable",label:"Travel / Ultraportable",body:[["Weight","Under 3 lbs"],["Battery","Reviewed real hours, not the box claim"],["CPU","Efficient U-series or Apple M-series"],["RAM","16GB \u2014 usually soldered, so buy ahead"],["Skip paying for","High-wattage chips that kill battery"]],
+pick:{name:"Apple MacBook Air 13 (M4)",why:"RTINGS' top-tested pick for college. Apple silicon is why its battery figures hold up closer to the advertised number than most.",url:"https://www.rtings.com/laptop/reviews/best/by-usage/college"}}];
+
+const tabsEl=document.getElementById("cat-tabs"),panelsEl=document.getElementById("cat-panels");
+categories.forEach((cat,i)=>{
+const btn=document.createElement("button");btn.className="tab-btn";btn.textContent=cat.label;
+btn.setAttribute("role","tab");btn.setAttribute("aria-selected",i===0?"true":"false");
+btn.onclick=()=>selectTab(cat.id);tabsEl.appendChild(btn);
+const p=document.createElement("div");p.className="tab-panel"+(i===0?" active":"");p.id="panel-"+cat.id;
+p.innerHTML=cat.body.map(r=>`<div class="spec-row"><span class="k">${r[0]}</span><span class="v">${r[1]}</span></div>`).join("")
++`<div class="pick"><div><div class="label">REVIEWER'S PICK</div><div class="model">${cat.pick.name}</div><p class="why">${cat.pick.why}</p></div>
+<a class="btn" href="${cat.pick.url}" target="_blank" rel="noopener">See this pick</a></div>`;
+panelsEl.appendChild(p);});
+function selectTab(id){categories.forEach(c=>document.getElementById("panel-"+c.id).classList.toggle("active",c.id===id));
+[...tabsEl.children].forEach((b,i)=>b.setAttribute("aria-selected",categories[i].id===id?"true":"false"));}
+</script>
+</body>
+</html>

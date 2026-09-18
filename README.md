@@ -38,4 +38,34 @@ Our goal is to build a simple, reliable resource that cuts through the noise and
 
 ## 📦 Website Features
 
-### 💵 Price Categor
+### 💵 Price Categorization  
+Breakdowns of what each price range can realistically handle, from basic tasks to heavy workloads.
+
+### 📊 Performance Evaluation  
+Users can input their PC components (CPU, GPU, RAM, storage) and instantly see what their system can run.  
+This focuses on **capability**, not upgrades.
+
+### 🛒 Buying Guidance  
+Helps users understand what specs matter, how pricing aligns with performance needs, and what to look for when purchasing a computer.
+
+---
+
+## 🧩 Planned Features
+
+- 🖥️ Component input fields  
+- 📈 Performance scoring system  
+- 📉 Price‑to‑performance charts  
+- 📚 Category explanations (budget → high‑end)  
+- 📱 Clean, responsive layout  
+- 🎨 UI designed in Figma  
+
+---
+
+## 🧭 Roadmap
+
+- 📝 Research and planning  
+- 🎨 UI/UX design  
+- 🧱 Website structure (HTML/CSS)  
+- ⚙️ JavaScript logic and performance tools  
+- 🔍 Testing and refinement  
+- 🎓 Final Capstone presentation  

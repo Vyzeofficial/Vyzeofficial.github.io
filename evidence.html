@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaTech &mdash; The evidence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#9aa4b0;
+--line:#272c34;--green:#1fc47a;--green-dim:#12331f;--red:#e6394b;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px;}
+a{color:var(--green);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,11,13,.92);backdrop-filter:blur(8px);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--red);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--green);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:17ch;}
+h1 em{font-style:normal;color:var(--green);}
+h1 .r{color:var(--red);font-style:normal;}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--green);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,196,122,.25);}
+.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--green);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+/* animation */
+.rise{opacity:0;transform:translateY(14px);}
+.rise.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise{opacity:1!important;transform:none!important;}}
+
+.cases{display:grid;gap:14px;}
+.case{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px;transition:transform .2s ease,border-left-width .2s;}
+.case:hover{transform:translateX(3px);}
+.case.report{border-left-color:var(--green);}
+.case h3{margin:0 0 4px;font-size:1.01rem;}
+.case .amount{font-family:var(--display);font-weight:700;color:var(--red);font-size:1.45rem;line-height:1.2;}
+.case.report .amount{color:var(--green);}
+.case p{color:var(--muted);font-size:0.92rem;margin:9px 0 0;}
+.case .takeaway{color:var(--ink);border-top:1px solid var(--line);padding-top:10px;margin-top:12px;font-size:0.89rem;}
+.case .src{font-size:0.79rem;margin-top:10px;}
+.case .src a{color:var(--muted);}
+.case .src a:hover{color:var(--green);}
+.flags{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 22px;}
+.flags .row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);}
+.flags .row:last-child{border-bottom:none;}
+.flags .mark{font-family:var(--display);font-weight:700;color:var(--red);flex:0 0 26px;font-size:1.1rem;}
+.flags .row strong{display:block;font-size:0.95rem;margin-bottom:2px;}
+.flags .row span{color:var(--muted);font-size:0.89rem;}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="./index.html">Nexa<b>Tech</b></a>
+<div class="links"><a class="" href="./index.html">Decoder</a><a class="" href="./guide.html">Tiers &amp; prices</a><a class="on" href="./evidence.html">Evidence</a></div>
+</div></nav>
+<div class="wrap">
+<header class="top">
+  <h1 class="rise">The evidence that buyers <em>are</em> being misled</h1>
+  <p class="lede rise">Every claim NexaTech makes traces back to a regulator, a court filing, or a published benchmark test. This page is the source list.</p>
+</header>
+
+<section>
+  <h2>Laptops that aren't what the listing says</h2>
+  <p class="section-note">The clearest example: machines sold as gaming laptops that cannot run games. These aren't edge cases — reviewers buy and benchmark them regularly.</p>
+  <div class="cases">
+
+    <div class="case rise report">
+      <div class="amount">Benchmarked</div>
+      <h3>"Gaming laptops" with no graphics card at all</h3>
+      <p>Reviewers bought and tested laptops sold on Amazon by brands including NIMO, Mallrace, Chuwi, Jumper, and Kaigerr, and found they were marketed as gaming laptops while lacking the hardware modern gaming requires. The NIMO 17 was advertised for peak performance, esports, video editing, and even running local AI models, but relies on an older AMD processor with integrated Radeon 780M graphics and no dedicated GPU. Mallrace marketed an 18.5-inch laptop as high-performance despite using an entry-level Ryzen 4300U from 2020, a chip designed for basic office work. Testing found that in nearly every case, the same money spent on a genuine gaming laptop performed significantly better — Lenovo's LOQ, with an RTX 5050 and a high refresh display, actually cost less than the NIMO they purchased.</p>
+      <p class="takeaway">The price isn't the tell. The missing GPU model number is.</p>
+      <p class="src"><a href="https://www.bestlaptop.deals/articles/exposing-misleading-gaming-laptops-on-amazon" target="_blank" rel="noopener">Exposing Misleading "Gaming Laptops" on Amazon, July 2026</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">300%</div>
+      <h3>The markup-then-discount trick on fake gaming laptops</h3>
+      <p>TechRadar described sellers putting "newest gaming laptop" in product names for machines far from being gaming machines, marking the original price up by around 300% and then discounting it heavily. The article notes these laptops have no dedicated graphics card and instead use older processors with weak integrated graphics, most commonly the AMD Ryzen 7 5825U. It also documented the same physical laptop — the ACEMAGIC AX16 — appearing under multiple unfamiliar brand names, including one badged as a monitor company that sells no laptops on its own website.</p>
+      <p class="takeaway">An unfamiliar brand name and a huge percentage discount usually describe the same machine as a cheaper honest listing.</p>
+      <p class="src"><a href="https://www.techradar.com/computing/gaming-laptops/please-dont-buy-these-terrible-gaming-laptops-from-amazon-this-black-friday-if-youre-on-a-tight-budget-buy-this-one-instead" target="_blank" rel="noopener">TechRadar</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">$331</div>
+      <h3>A "$1,500" gaming laptop selling for $331</h3>
+      <p>TechRadar flagged a listing claiming a gaming laptop normally sold for $1,500 was available for $331.49, calling the size of the cut a red flag in itself. The specs were the real problem: a vague "12th Quad-Core Processor" turned out to be a three-year-old Intel N97, a chip the listing favorably compared to the Pentium N5030 and Celeron N5095 — both old, weak processors, and not something belonging in a gaming laptop. The listing also carried DDR4 rather than the DDR5 memory modern gaming laptops use. The verdict was direct: calling it a gaming laptop is misleading, because it will not play modern games.</p>
+      <p class="takeaway">Vague CPU descriptions like "12th Quad-Core Processor" exist to avoid naming a chip you'd reject.</p>
+      <p class="src"><a href="https://www.techradar.com/seasonal-sales/you-cant-trust-every-prime-day-laptop-deal-you-see-on-amazon-but-you-can-trust-me-and-these-10-offers-are-genuinely-good" target="_blank" rel="noopener">TechRadar</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">Hidden specs</div>
+      <h3>Listings that never name the CPU</h3>
+      <p>Tom's Guide examined a cheap prebuilt gaming PC sold on Amazon and identified the central warning sign: the listing never actually stated which CPU model the buyer would receive. Knowing exactly which components are in a machine is described as critical to getting a good deal, and a vendor obscuring those details is not one to trust.</p>
+      <p class="takeaway">If a listing won't name the part, assume the part is the reason.</p>
+      <p class="src"><a href="https://tomsguide.com/features/help-me-toms-guide-should-i-buy-a-cheap-gaming-pc-off-amazon" target="_blank" rel="noopener">Tom's Guide</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>How the $200 "gaming laptop" works</h2>
+  <p class="section-note">Four mechanics show up again and again across the reporting above.</p>
+  <div class="flags rise">
+    <div class="row"><span class="mark">01</span><div><strong>Borrow the category, skip the hardware</strong><span>"Gaming laptop" is a marketing category with no minimum requirements. A machine with integrated graphics can legally carry the label.</span></div></div>
+    <div class="row"><span class="mark">02</span><div><strong>Describe the CPU without naming it</strong><span>"12th Quad-Core Processor" or "high-speed processor" avoids a model number you could look up in ten seconds.</span></div></div>
+    <div class="row"><span class="mark">03</span><div><strong>Invent the original price</strong><span>Mark up to a number the machine never sold at, then discount steeply. The percentage does the persuading.</span></div></div>
+    <div class="row"><span class="mark">04</span><div><strong>Rotate the brand name</strong><span>The same chassis reappears under new brands, so bad reviews never accumulate against any one seller.</span></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Regulators and courts</h2>
+  <p class="section-note">Not only obscure sellers. These are findings against some of the largest names in computing.</p>
+  <div class="cases">
+
+    <div class="case rise">
+      <div class="amount">$4 million</div>
+      <h3>HP — fake discounts on laptops and desktops</h3>
+      <p>HP agreed to settle a US class action alleging it used deceptive pricing tactics on its website, including fake discounts and misleading limited-time offers, covering specific PC models bought between June 2021 and October 2024. The case began when a buyer purchased a desktop advertised as $100 off a $999.99 regular price, then alleged HP had already been selling that model at the lower price for months. The complaint also alleged HP flagged the machine as "Only 1 Left!" while continuing to sell it for weeks afterward. HP admitted no wrongdoing.</p>
+      <p class="takeaway">The same trick the no-name Amazon sellers use, from a top-three PC manufacturer.</p>
+      <p class="src"><a href="https://www.theregister.com/2025/04/19/hp_deceptive_pricing_lawsuit/" target="_blank" rel="noopener">The Register, April 2025</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">$113 million</div>
+      <h3>Apple — performance throttling users weren't told about</h3>
+      <p>California and 33 other states settled with Apple over allegations it misrepresented iPhone batteries and shipped software updates that reduced processing performance, while describing those updates as improving power management rather than disclosing the performance cut. The attorneys general argued the concealment pushed consumers toward buying new phones. A separate class action over the same issue settled for up to $500 million.</p>
+      <p class="takeaway">Advertised performance and delivered performance are separate measurements.</p>
+      <p class="src"><a href="https://www.oag.ca.gov/news/press-releases/attorney-general-becerra-announces-113-million-multistate-settlement-against" target="_blank" rel="noopener">California Attorney General, Nov 2020</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">Half of buyers</div>
+      <h3>FTC study — "up to" reads as a promise</h3>
+      <p>An FTC-commissioned study found that many consumers understand "up to" claims as promising maximum results, and the FTC concluded advertisers using them should be able to show consumers are likely to achieve that maximum under normal conditions. Industry practice had long treated an "up to" claim as substantiated if roughly 10% of consumers reached the advertised figure.</p>
+      <p class="takeaway">That gap between 10% and "most people" is where "up to 18 hours of battery" lives.</p>
+      <p class="src"><a href="https://www.ftc.gov/node/32791" target="_blank" rel="noopener">FTC report by Hastak &amp; Murphy, 2012</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">$35 million</div>
+      <h3>Office Depot — invented performance problems</h3>
+      <p>Office Depot and Support.com paid a combined $35 million to settle FTC charges that they pushed customers into unneeded repair services by claiming their software had detected malware symptoms. The FTC alleged the results shown to customers were based entirely on four yes/no questions asked at the start of the scan, rather than any actual diagnostic.</p>
+      <p class="takeaway">If a retailer can invent a performance problem, it can invent a performance claim.</p>
+      <p class="src"><a href="https://www.lexology.com/library/detail.aspx?g=b77b6530-300f-4a87-9251-ab9e5ae4adde" target="_blank" rel="noopener">Lexology / FKKS, April 2019</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">32 states</div>
+      <h3>Lenovo — what shipped on the laptop wasn't disclosed</h3>
+      <p>Lenovo settled with the FTC and 32 state attorneys general over laptops preloaded with ad-injecting software that compromised security protections in order to deliver advertisements. The FTC's deception count centered on inadequate disclosure: a single pop-up with a small opt-out link, where clicking the close button opted the user in.</p>
+      <p class="takeaway">The spec sheet described the hardware, not what the machine would actually do.</p>
+      <p class="src"><a href="https://www.hunton.com/hunton-retail-law-resource/ftc-announces-settlement-lenovo-regarding-preinstalled-laptop-software" target="_blank" rel="noopener">Hunton Retail Law Resource, Sept 2017</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">90+ suits</div>
+      <h3>Retailers — the discount that never existed</h3>
+      <p>More than 90 class actions were filed in a single year against retailers over allegedly misleading advertised discounts, using inflated reference prices to create the illusion of a sale or falsely presenting sales as time-limited. Named companies included Amazon, Best Buy, and Sharper Image, across products ranging from TVs to appliances.</p>
+      <p class="takeaway">A strikethrough price is a marketing number, not a market value.</p>
+      <p class="src"><a href="https://truthinadvertising.org/articles/catrends-deceptive-deals/" target="_blank" rel="noopener">Truth in Advertising, 2025</a></p>
+    </div>
+
+  </div>
+  <div class="self rise" style="background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;"><p style="margin:0;color:var(--muted);font-size:.9rem;max-width:52ch;">Now put it to use. Run a listing through the decoder, or check what your budget should actually buy.</p><a class="btn" href="./index.html">Open the decoder</a></div>
+</section>
+
+
+<footer>NexaTech — built to help you compare specs, not to sell you a laptop. Buying links point to independent review guides; NexaTech earns nothing from them.</footer>
+</div>
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*55)+'ms';io.observe(el);});
+</script>
+</body>
+</html>

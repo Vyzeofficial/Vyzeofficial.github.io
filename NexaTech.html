@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NexaTech — Know what you're buying</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#9aa4b0;
+--line:#272c34;--green:#1fc47a;--green-dim:#12331f;--red:#e6394b;--red-dim:#331318;
+--display:"Chakra Petch",ui-sans-serif,sans-serif;--body:"Inter",ui-sans-serif,sans-serif;}
+*{box-sizing:border-box;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px;}
+a{color:var(--green);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,11,13,.92);backdrop-filter:blur(8px);z-index:20;
+padding-top:env(safe-area-inset-top,0px);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);background:none;border:none;cursor:pointer;padding:0;}
+.logo b{color:var(--red);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;background:none;border:none;font:inherit;cursor:pointer;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--green);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--green);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:17ch;}
+h1 em{font-style:normal;color:var(--green);}
+h1 .r{color:var(--red);font-style:normal;}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--green);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;border:none;cursor:pointer;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(31,196,122,.25);}
+.btn.ghost{background:transparent;color:var(--green);border:1px solid var(--green);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+/* animation */
+.rise{opacity:0;transform:translateY(14px);}
+.rise.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise{opacity:1!important;transform:none!important;}}
+
+/* page switching */
+.page{display:none;}
+.page.active{display:block;}
+
+/* index: decoder */
+.decoder{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;}
+.decoder h3{margin:0 0 4px;font-size:1.1rem;}
+.decoder .hint{color:var(--muted);font-size:0.87rem;margin:0 0 16px;}
+.decoder input{width:100%;padding:13px 15px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;transition:border-color .2s,box-shadow .2s;}
+.decoder input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(31,196,122,.18);}
+.verdict{border-left:3px solid var(--line);padding:12px 0 12px 14px;margin-top:12px;animation:slide .35s cubic-bezier(.2,.7,.3,1) both;}
+@keyframes slide{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+.verdict.good{border-color:var(--green);}
+.verdict.warn{border-color:var(--red);}
+.verdict .tag{display:inline-block;font-family:var(--display);font-size:0.71rem;font-weight:600;letter-spacing:.04em;padding:3px 9px;border-radius:4px;margin-bottom:7px;}
+.tag.good{background:var(--green-dim);color:var(--green);}
+.tag.warn{background:var(--red-dim);color:var(--red);}
+.tag.neutral{background:var(--surface-2);color:var(--muted);}
+.verdict p{margin:0;}
+.verdict .real{margin-top:8px;font-size:0.88rem;color:var(--muted);}
+.cat-filter{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 10px;}
+.pill{font-size:0.77rem;padding:5px 11px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-family:var(--body);transition:.18s;}
+.pill[aria-pressed="true"]{border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{font-size:0.79rem;padding:5px 11px;border:1px solid var(--line);border-radius:20px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--body);transition:.18s;}
+.chip:hover{border-color:var(--red);color:var(--red);transform:translateY(-1px);}
+.next{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+
+/* guide: tiers & prices */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.tab-btn{font-family:var(--body);font-size:0.89rem;padding:8px 14px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.18s;}
+.tab-btn[aria-selected="true"]{border-color:var(--green);color:var(--green);background:var(--green-dim);}
+.tab-panel{display:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;}
+.tab-panel.active{display:block;animation:fade .3s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.spec-row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:0.93rem;}
+.spec-row .k{color:var(--muted);}
+.spec-row .v{font-family:var(--display);font-size:0.89rem;text-align:right;}
+.pick{margin-top:16px;background:var(--surface-2);border-radius:9px;padding:16px 18px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;}
+.pick .label{font-family:var(--display);font-size:0.7rem;letter-spacing:.05em;color:var(--green);}
+.pick .model{font-family:var(--display);font-weight:700;font-size:1.05rem;margin:2px 0 3px;}
+.pick .why{color:var(--muted);font-size:0.86rem;max-width:46ch;margin:0;}
+table{width:100%;border-collapse:collapse;}
+thead th{text-align:left;font-family:var(--display);font-weight:600;font-size:0.79rem;color:var(--muted);padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap;}
+tbody td{padding:12px;border-bottom:1px solid var(--line);font-size:0.89rem;vertical-align:top;}
+tbody tr{transition:background .18s;}
+tbody tr:hover{background:var(--surface);}
+.tier-name{font-family:var(--display);font-weight:700;color:var(--green);}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;transition:transform .2s ease,border-color .2s;}
+.price-card:hover{transform:translateY(-3px);border-color:var(--green);}
+.price-card .amount{font-family:var(--display);font-size:1.25rem;font-weight:700;color:var(--green);}
+.price-card p{color:var(--muted);font-size:0.86rem;margin:8px 0 0;}
+.self{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
+.self p{margin:0;color:var(--muted);font-size:0.9rem;max-width:52ch;}
+@media(max-width:640px){#page-guide thead{display:none;}#page-guide table,#page-guide tbody,#page-guide tr,#page-guide td{display:block;width:100%;}
+#page-guide tbody tr{border-bottom:2px solid var(--line);padding:8px 0;}#page-guide tbody td{border-bottom:none;padding:5px 10px;}
+#page-guide tbody td::before{content:attr(data-label);display:block;font-family:var(--display);font-size:.7rem;color:var(--muted);}}
+
+/* evidence */
+.cases{display:grid;gap:14px;}
+.case{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;padding:20px 22px;transition:transform .2s ease,border-left-width .2s;}
+.case:hover{transform:translateX(3px);}
+.case.report{border-left-color:var(--green);}
+.case h3{margin:0 0 4px;font-size:1.01rem;}
+.case .amount{font-family:var(--display);font-weight:700;color:var(--red);font-size:1.45rem;line-height:1.2;}
+.case.report .amount{color:var(--green);}
+.case p{color:var(--muted);font-size:0.92rem;margin:9px 0 0;}
+.case .takeaway{color:var(--ink);border-top:1px solid var(--line);padding-top:10px;margin-top:12px;font-size:0.89rem;}
+.case .src{font-size:0.79rem;margin-top:10px;}
+.case .src a{color:var(--muted);}
+.case .src a:hover{color:var(--green);}
+.flags{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 22px;}
+.flags .row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);}
+.flags .row:last-child{border-bottom:none;}
+.flags .mark{font-family:var(--display);font-weight:700;color:var(--red);flex:0 0 26px;font-size:1.1rem;}
+.flags .row strong{display:block;font-size:0.95rem;margin-bottom:2px;}
+.flags .row span{color:var(--muted);font-size:0.89rem;}
+
+:root:not([data-theme="light"]){color-scheme:dark;}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+<a class="logo" href="#index" data-page="index">Nexa<b>Tech</b></a>
+<div class="links">
+<a href="#index" data-page="index">Decoder</a><a href="#guide" data-page="guide">Tiers &amp; prices</a><a href="#evidence" data-page="evidence">Evidence</a>
+</div>
+</div></nav>
+
+<!-- ===================== PAGE: DECODER (index) ===================== -->
+<div class="page" id="page-index">
+<div class="wrap">
+<header class="top">
+  <h1 class="rise">Know what you're <em>actually</em> buying.</h1>
+  <p class="lede rise">Laptop listings are built from numbers designed to impress, not inform. Paste any spec or sales phrase below and NexaTech tells you what it means in real use.</p>
+  <div class="decoder rise">
+    <h3>Spec decoder</h3>
+    <p class="hint">Type a spec, component, or marketing phrase from a listing.</p>
+    <input id="decode-input" type="text" placeholder="e.g. 16GB RAM, up to 18 hours battery, RTX 4050, 4K display">
+    <div id="decode-result"></div>
+    <div class="cat-filter" id="cat-filter"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+</header>
+<section>
+  <h2 class="rise">Where to go next</h2>
+  <p class="section-note rise">The decoder tells you what a spec means. These pages tell you what to buy, and why the problem exists in the first place.</p>
+  <div class="next rise">
+    <a class="btn" href="#guide" data-page="guide">See tiers &amp; prices</a>
+    <a class="btn ghost" href="#evidence" data-page="evidence">Read the evidence</a>
+  </div>
+</section>
+</div>
+</div>
+
+<!-- ===================== PAGE: TIERS & PRICES (guide) ===================== -->
+<div class="page" id="page-guide">
+<div class="wrap">
+<header class="top">
+  <h1 class="rise">What you need, and what it should <em>cost</em>.</h1>
+  <p class="lede rise">Match the machine to how you'll actually use it, then check that against the price. A spec sheet is only overpriced or underpowered relative to a job.</p>
+</header>
+
+<section>
+  <h2 class="rise">What "good enough" looks like, by use case</h2>
+  <p class="section-note rise">The same spec sheet is overkill for one person and a bottleneck for another. Each tab ends with a current pick from an independent reviewer.</p>
+  <div class="tabs rise" role="tablist" id="cat-tabs"></div>
+  <div class="rise" id="cat-panels"></div>
+  <div class="self rise">
+    <p><strong>Want to pick your own?</strong> Skip the recommendations and browse benchmark-tested rankings yourself. RTINGS publishes measured battery, brightness, and performance figures rather than manufacturer claims.</p>
+    <a class="btn ghost" href="https://www.rtings.com/laptop/reviews/best/by-usage/college" target="_blank" rel="noopener">Browse tested rankings</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="rise">Performance tiers, honestly labeled</h2>
+  <p class="section-note rise">Listings rarely say which tier a machine belongs to. Match what's inside against this table before you match the price.</p>
+  <div class="rise" style="overflow-x:auto;">
+  <table>
+    <thead><tr><th>Tier</th><th>CPU</th><th>RAM</th><th>Storage</th><th>What it's actually for</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Tier"><span class="tier-name">Entry</span></td><td data-label="CPU">Intel N-series / Core i3, Ryzen 3</td><td data-label="RAM">8GB</td><td data-label="Storage">256GB SSD</td><td data-label="Use">Browsing, docs, video calls. Struggles past 15 tabs or any editing.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Everyday</span></td><td data-label="CPU">Core i5 / Ryzen 5, current gen</td><td data-label="RAM">16GB</td><td data-label="Storage">512GB SSD</td><td data-label="Use">Real multitasking, school and office work, light photo editing.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Performance</span></td><td data-label="CPU">Core i7 / Ryzen 7, or Apple M-series</td><td data-label="RAM">16&ndash;32GB</td><td data-label="Storage">1TB SSD</td><td data-label="Use">Video editing, coding, CAD, gaming with a real GPU.</td></tr>
+      <tr><td data-label="Tier"><span class="tier-name">Enthusiast</span></td><td data-label="CPU">Core i9 / Ryzen 9 + RTX 4070 or better</td><td data-label="RAM">32GB+</td><td data-label="Storage">1TB+ NVMe</td><td data-label="Use">3D rendering, high-end gaming, ML workloads.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="rise">What each price range should get you</h2>
+  <p class="section-note rise">If a listing costs noticeably less than its tier without a real sale attached, something on this list was cut. Find out what.</p>
+  <div class="price-grid">
+    <div class="price-card rise"><div class="amount">$400&ndash;600</div><p>Entry tier. Fine as a second machine or for basic school use. Expect a dim low-res screen, slow storage, and soldered RAM.</p></div>
+    <div class="price-card rise"><div class="amount">$700&ndash;900</div><p>Everyday tier done properly. The sweet spot for most students, and where price-per-performance peaks.</p></div>
+    <div class="price-card rise"><div class="amount">$1000&ndash;1500</div><p>Performance tier, or a premium everyday build with a better screen and battery. Watch for money spent on thinness instead of speed.</p></div>
+    <div class="price-card rise"><div class="amount">$1800+</div><p>Enthusiast tier or specialized work. At this price, weak cooling or 16GB RAM is a red flag, not a trade-off.</p></div>
+  </div>
+</section>
+</div>
+</div>
+
+<!-- ===================== PAGE: EVIDENCE ===================== -->
+<div class="page" id="page-evidence">
+<div class="wrap">
+<header class="top">
+  <h1 class="rise">The evidence that buyers <em>are</em> being misled</h1>
+  <p class="lede rise">Every claim NexaTech makes traces back to a regulator, a court filing, or a published benchmark test. This page is the source list.</p>
+</header>
+
+<section>
+  <h2>Laptops that aren't what the listing says</h2>
+  <p class="section-note">The clearest example: machines sold as gaming laptops that cannot run games. These aren't edge cases — reviewers buy and benchmark them regularly.</p>
+  <div class="cases">
+
+    <div class="case rise report">
+      <div class="amount">Benchmarked</div>
+      <h3>"Gaming laptops" with no graphics card at all</h3>
+      <p>Reviewers bought and tested laptops sold on Amazon by brands including NIMO, Mallrace, Chuwi, Jumper, and Kaigerr, and found they were marketed as gaming laptops while lacking the hardware modern gaming requires. The NIMO 17 was advertised for peak performance, esports, video editing, and even running local AI models, but relies on an older AMD processor with integrated Radeon 780M graphics and no dedicated GPU. Mallrace marketed an 18.5-inch laptop as high-performance despite using an entry-level Ryzen 4300U from 2020, a chip designed for basic office work. Testing found that in nearly every case, the same money spent on a genuine gaming laptop performed significantly better — Lenovo's LOQ, with an RTX 5050 and a high refresh display, actually cost less than the NIMO they purchased.</p>
+      <p class="takeaway">The price isn't the tell. The missing GPU model number is.</p>
+      <p class="src"><a href="https://www.bestlaptop.deals/articles/exposing-misleading-gaming-laptops-on-amazon" target="_blank" rel="noopener">Exposing Misleading "Gaming Laptops" on Amazon, July 2026</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">300%</div>
+      <h3>The markup-then-discount trick on fake gaming laptops</h3>
+      <p>TechRadar described sellers putting "newest gaming laptop" in product names for machines far from being gaming machines, marking the original price up by around 300% and then discounting it heavily. The article notes these laptops have no dedicated graphics card and instead use older processors with weak integrated graphics, most commonly the AMD Ryzen 7 5825U. It also documented the same physical laptop — the ACEMAGIC AX16 — appearing under multiple unfamiliar brand names, including one badged as a monitor company that sells no laptops on its own website.</p>
+      <p class="takeaway">An unfamiliar brand name and a huge percentage discount usually describe the same machine as a cheaper honest listing.</p>
+      <p class="src"><a href="https://www.techradar.com/computing/gaming-laptops/please-dont-buy-these-terrible-gaming-laptops-from-amazon-this-black-friday-if-youre-on-a-tight-budget-buy-this-one-instead" target="_blank" rel="noopener">TechRadar</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">$331</div>
+      <h3>A "$1,500" gaming laptop selling for $331</h3>
+      <p>TechRadar flagged a listing claiming a gaming laptop normally sold for $1,500 was available for $331.49, calling the size of the cut a red flag in itself. The specs were the real problem: a vague "12th Quad-Core Processor" turned out to be a three-year-old Intel N97, a chip the listing favorably compared to the Pentium N5030 and Celeron N5095 — both old, weak processors, and not something belonging in a gaming laptop. The listing also carried DDR4 rather than the DDR5 memory modern gaming laptops use. The verdict was direct: calling it a gaming laptop is misleading, because it will not play modern games.</p>
+      <p class="takeaway">Vague CPU descriptions like "12th Quad-Core Processor" exist to avoid naming a chip you'd reject.</p>
+      <p class="src"><a href="https://www.techradar.com/seasonal-sales/you-cant-trust-every-prime-day-laptop-deal-you-see-on-amazon-but-you-can-trust-me-and-these-10-offers-are-genuinely-good" target="_blank" rel="noopener">TechRadar</a></p>
+    </div>
+
+    <div class="case rise report">
+      <div class="amount">Hidden specs</div>
+      <h3>Listings that never name the CPU</h3>
+      <p>Tom's Guide examined a cheap prebuilt gaming PC sold on Amazon and identified the central warning sign: the listing never actually stated which CPU model the buyer would receive. Knowing exactly which components are in a machine is described as critical to getting a good deal, and a vendor obscuring those details is not one to trust.</p>
+      <p class="takeaway">If a listing won't name the part, assume the part is the reason.</p>
+      <p class="src"><a href="https://tomsguide.com/features/help-me-toms-guide-should-i-buy-a-cheap-gaming-pc-off-amazon" target="_blank" rel="noopener">Tom's Guide</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>How the $200 "gaming laptop" works</h2>
+  <p class="section-note">Four mechanics show up again and again across the reporting above.</p>
+  <div class="flags rise">
+    <div class="row"><span class="mark">01</span><div><strong>Borrow the category, skip the hardware</strong><span>"Gaming laptop" is a marketing category with no minimum requirements. A machine with integrated graphics can legally carry the label.</span></div></div>
+    <div class="row"><span class="mark">02</span><div><strong>Describe the CPU without naming it</strong><span>"12th Quad-Core Processor" or "high-speed processor" avoids a model number you could look up in ten seconds.</span></div></div>
+    <div class="row"><span class="mark">03</span><div><strong>Invent the original price</strong><span>Mark up to a number the machine never sold at, then discount steeply. The percentage does the persuading.</span></div></div>
+    <div class="row"><span class="mark">04</span><div><strong>Rotate the brand name</strong><span>The same chassis reappears under new brands, so bad reviews never accumulate against any one seller.</span></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Regulators and courts</h2>
+  <p class="section-note">Not only obscure sellers. These are findings against some of the largest names in computing.</p>
+  <div class="cases">
+
+    <div class="case rise">
+      <div class="amount">$4 million</div>
+      <h3>HP — fake discounts on laptops and desktops</h3>
+      <p>HP agreed to settle a US class action alleging it used deceptive pricing tactics on its website, including fake discounts and misleading limited-time offers, covering specific PC models bought between June 2021 and October 2024. The case began when a buyer purchased a desktop advertised as $100 off a $999.99 regular price, then alleged HP had already been selling that model at the lower price for months. The complaint also alleged HP flagged the machine as "Only 1 Left!" while continuing to sell it for weeks afterward. HP admitted no wrongdoing.</p>
+      <p class="takeaway">The same trick the no-name Amazon sellers use, from a top-three PC manufacturer.</p>
+      <p class="src"><a href="https://www.theregister.com/2025/04/19/hp_deceptive_pricing_lawsuit/" target="_blank" rel="noopener">The Register, April 2025</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">$113 million</div>
+      <h3>Apple — performance throttling users weren't told about</h3>
+      <p>California and 33 other states settled with Apple over allegations it misrepresented iPhone batteries and shipped software updates that reduced processing performance, while describing those updates as improving power management rather than disclosing the performance cut. The attorneys general argued the concealment pushed consumers toward buying new phones. A separate class action over the same issue settled for up to $500 million.</p>
+      <p class="takeaway">Advertised performance and delivered performance are separate measurements.</p>
+      <p class="src"><a href="https://www.oag.ca.gov/news/press-releases/attorney-general-becerra-announces-113-million-multistate-settlement-against" target="_blank" rel="noopener">California Attorney General, Nov 2020</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">Half of buyers</div>
+      <h3>FTC study — "up to" reads as a promise</h3>
+      <p>An FTC-commissioned study found that many consumers understand "up to" claims as promising maximum results, and the FTC concluded advertisers using them should be able to show consumers are likely to achieve that maximum under normal conditions. Industry practice had long treated an "up to" claim as substantiated if roughly 10% of consumers reached the advertised figure.</p>
+      <p class="takeaway">That gap between 10% and "most people" is where "up to 18 hours of battery" lives.</p>
+      <p class="src"><a href="https://www.ftc.gov/node/32791" target="_blank" rel="noopener">FTC report by Hastak &amp; Murphy, 2012</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">$35 million</div>
+      <h3>Office Depot — invented performance problems</h3>
+      <p>Office Depot and Support.com paid a combined $35 million to settle FTC charges that they pushed customers into unneeded repair services by claiming their software had detected malware symptoms. The FTC alleged the results shown to customers were based entirely on four yes/no questions asked at the start of the scan, rather than any actual diagnostic.</p>
+      <p class="takeaway">If a retailer can invent a performance problem, it can invent a performance claim.</p>
+      <p class="src"><a href="https://www.lexology.com/library/detail.aspx?g=b77b6530-300f-4a87-9251-ab9e5ae4adde" target="_blank" rel="noopener">Lexology / FKKS, April 2019</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">32 states</div>
+      <h3>Lenovo — what shipped on the laptop wasn't disclosed</h3>
+      <p>Lenovo settled with the FTC and 32 state attorneys general over laptops preloaded with ad-injecting software that compromised security protections in order to deliver advertisements. The FTC's deception count centered on inadequate disclosure: a single pop-up with a small opt-out link, where clicking the close button opted the user in.</p>
+      <p class="takeaway">The spec sheet described the hardware, not what the machine would actually do.</p>
+      <p class="src"><a href="https://www.hunton.com/hunton-retail-law-resource/ftc-announces-settlement-lenovo-regarding-preinstalled-laptop-software" target="_blank" rel="noopener">Hunton Retail Law Resource, Sept 2017</a></p>
+    </div>
+
+    <div class="case rise">
+      <div class="amount">90+ suits</div>
+      <h3>Retailers — the discount that never existed</h3>
+      <p>More than 90 class actions were filed in a single year against retailers over allegedly misleading advertised discounts, using inflated reference prices to create the illusion of a sale or falsely presenting sales as time-limited. Named companies included Amazon, Best Buy, and Sharper Image, across products ranging from TVs to appliances.</p>
+      <p class="takeaway">A strikethrough price is a marketing number, not a market value.</p>
+      <p class="src"><a href="https://truthinadvertising.org/articles/catrends-deceptive-deals/" target="_blank" rel="noopener">Truth in Advertising, 2025</a></p>
+    </div>
+
+  </div>
+  <div class="self rise"><p>Now put it to use. Run a listing through the decoder, or check what your budget should actually buy.</p><a class="btn" href="#index" data-page="index">Open the decoder</a></div>
+</section>
+</div>
+</div>
+
+<footer><div class="wrap">NexaTech — built to help you compare specs, not to sell you a laptop. Buying links point to independent review guides; NexaTech earns nothing from them.</div></footer>
+
+<script>
+/* ---------- page switching ---------- */
+const PAGES=["index","guide","evidence"];
+function showPage(id){
+  if(!PAGES.includes(id)) id="index";
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active", p.id==="page-"+id));
+  document.querySelectorAll("[data-page]").forEach(a=>a.classList.toggle("on", a.dataset.page===id));
+  window.scrollTo(0,0);
+  refreshRise();
+}
+document.querySelectorAll("[data-page]").forEach(a=>{
+  a.addEventListener("click",(e)=>{
+    e.preventDefault();
+    const id=a.dataset.page;
+    if(location.hash.slice(1)!==id) history.pushState(null,"","#"+id);
+    showPage(id);
+  });
+});
+window.addEventListener("popstate",()=>showPage(location.hash.slice(1)||"index"));
+
+/* ---------- scroll-reveal ---------- */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.12});
+function refreshRise(){
+  document.querySelectorAll(".page.active .rise:not(.in)").forEach((el,i)=>{
+    if(!el.dataset.observed){el.style.transitionDelay=(Math.min(i,6)*55)+"ms";io.observe(el);el.dataset.observed="1";}
+  });
+}
+
+/* ---------- DECODER (index page) ---------- */
+const dictionary = [
+  // RAM
+  {c:"RAM", k:["4gb ram","4 gb ram"], g:false, t:"4GB is below the working minimum for a modern OS. Expect constant slowdowns even with a browser and one app open.", r:"Avoid at any price."},
+  {c:"RAM", k:["8gb ram","8 gb ram"], g:false, t:"The entry-line minimum. Fine for browsing and documents; expect stutter with many tabs, a video call, and an app running together.", r:"Acceptable under $600. A red flag above $900."},
+  {c:"RAM", k:["16gb ram","16 gb ram"], g:true, t:"Comfortably covers everyday multitasking, schoolwork, and light creative work.", r:"The realistic target for most buyers in 2026."},
+  {c:"RAM", k:["32gb ram","32 gb ram"], g:true, t:"Headroom for video editing, virtual machines, large datasets, and heavy multitasking.", r:"Worth it only if you know why you need it."},
+  {c:"RAM", k:["soldered","non-upgradeable","lpddr"], g:false, t:"Soldered RAM cannot be upgraded later. Whatever you buy is what the machine has for its whole life.", r:"Buy one tier more RAM than you need today."},
+  {c:"RAM", k:["ddr4"], g:false, t:"An older memory standard. Still functional, but signals an older platform being sold at current-year prices.", r:"Check the CPU generation before buying."},
+  {c:"RAM", k:["ddr5"], g:true, t:"Current memory standard with higher bandwidth. A genuine spec, not marketing.", r:"Expected on mid-range and above."},
+  // CPU
+  {c:"CPU", k:["celeron","pentium","intel n100","n-series","atom"], g:false, t:"Budget chips built for cost, not speed. They handle a browser and a document, and little else at once.", r:"Only for machines under about $400."},
+  {c:"CPU", k:["core i3","ryzen 3"], g:false, t:"Entry-level. Workable for light use, but it will be the bottleneck within a couple of years.", r:"Fine for a secondary laptop."},
+  {c:"CPU", k:["core i5","ryzen 5"], g:true, t:"The mainstream sweet spot. Handles nearly all schoolwork, office work, and light editing without complaint.", r:"Check the generation — a current i5 often beats an older i7."},
+  {c:"CPU", k:["core i7","ryzen 7"], g:true, t:"Capable for multitasking and moderate creative work.", r:"A 4-year-old i7 can lose to a current i5. Generation matters more than the number."},
+  {c:"CPU", k:["core i9","ryzen 9"], g:true, t:"Top-tier desktop-class power. Meaningful for rendering and compiling; wasted on browsing.", r:"In a thin laptop it will throttle and never hit its rated speed."},
+  {c:"CPU", k:["apple m1","apple m2","apple m3","apple m4","m-series"], g:true, t:"Apple's own chips deliver strong performance per watt, which is why Mac battery figures hold up better than most.", r:"RAM is soldered — choose carefully at purchase."},
+  {c:"CPU", k:["up to","ghz","boost clock","turbo"], g:false, t:"A boost clock is a short burst peak, not a sustained speed. The base clock, usually 2–3GHz lower, predicts real-world performance better.", r:"The base clock is rarely printed on the box. Look it up."},
+  {c:"CPU", k:["cores","16 cores","octa-core","8 cores"], g:false, t:"Core counts mix fast performance cores with slow efficiency cores. A 16-core chip may have only 6 fast cores.", r:"Compare benchmark scores, not core counts."},
+  {c:"CPU", k:["u-series","low power","15w"], g:false, t:"A low-wattage chip tuned for battery life. Good for portability, weaker under sustained load than its name suggests.", r:"Same model name, much less performance than the H-series version."},
+  // GPU
+  {c:"GPU", k:["integrated graphics","intel iris","uhd graphics","vega graphics"], g:false, t:"Graphics built into the CPU. Fine for video, terrible for gaming or 3D work.", r:"No amount of RAM compensates for this in games."},
+  {c:"GPU", k:["nvidia mx","geforce mx"], g:false, t:"An entry GPU that carries the NVIDIA name but performs close to integrated graphics.", r:"The brand is doing the selling here, not the chip."},
+  {c:"GPU", k:["rtx 3050","rtx 4050","rtx 2050"], g:false, t:"The bottom rung of the RTX line. Playable at 1080p on lower settings; not a gaming machine.", r:"Often paired with low VRAM, which limits it further."},
+  {c:"GPU", k:["rtx 4060","rtx 4070","rtx 5060"], g:true, t:"Genuine gaming and creative performance at 1080p and 1440p.", r:"Check the wattage rating — the same GPU varies widely between laptops."},
+  {c:"GPU", k:["4gb graphics","6gb vram","4gb vram"], g:false, t:"VRAM is often advertised instead of GPU model because the number sounds large. A slow GPU with lots of VRAM is still slow.", r:"Model number first, VRAM second."},
+  {c:"GPU", k:["dedicated graphics","discrete graphics","nvidia graphics","gaming graphics"], g:false, t:"A category, not a spec. This phrase covers everything from near-useless to high-end.", r:"Find the actual model number before paying extra for it."},
+  {c:"GPU", k:["max-q","tgp","wattage"], g:false, t:"Laptop GPUs run at different power limits. A low-wattage version of a card can be 30% slower than the same card in another laptop.", r:"Look for the TGP figure in reviews; makers rarely list it."},
+  // Storage
+  {c:"Storage", k:["emmc","hard drive","hdd","5400rpm"], g:false, t:"Slow storage. This single spec makes a laptop feel dated more than any other, regardless of CPU.", r:"Avoid. An SSD is the biggest real-world upgrade available."},
+  {c:"Storage", k:["128gb"], g:false, t:"Too small once the OS and updates are installed. You'll be managing space from week one.", r:"Not viable as a primary machine."},
+  {c:"Storage", k:["256gb"], g:false, t:"Fills fast with apps, photos, and updates. Workable only if you live in the cloud.", r:"Check whether it's upgradeable before buying."},
+  {c:"Storage", k:["512gb","1tb","2tb"], g:true, t:"A comfortable amount for most users without constant space management.", r:"A solid, non-inflated spec."},
+  {c:"Storage", k:["nvme","pcie gen 4","m.2"], g:true, t:"Fast SSD interface. Real, measurable improvement over older SATA drives.", r:"Genuine spec worth having."},
+  {c:"Storage", k:["up to 1tb","up to 2tb","expandable storage"], g:false, t:"The headline figure is usually the most expensive configuration, not the one at the listed price.", r:"Confirm the number in the exact SKU you're buying."},
+  // Display
+  {c:"Display", k:["hd display","1366x768","hd+","1600x900"], g:false, t:"Below full HD. 'HD' sounds current but describes a resolution from over a decade ago.", r:"Look for 1920x1080 or higher."},
+  {c:"Display", k:["full hd","1080p","1920x1080"], g:true, t:"The practical standard for laptop screens. Sharp enough at typical sizes.", r:"Resolution isn't everything — check brightness and color too."},
+  {c:"Display", k:["4k display","uhd display","retina"], g:false, t:"Higher resolution costs meaningful battery life and often isn't visible at 14 inches.", r:"Worth it for color work, rarely for general use."},
+  {c:"Display", k:["nits","brightness","250 nits","300 nits"], g:false, t:"Under 300 nits is hard to use near a window. Brightness is frequently omitted from listings for a reason.", r:"400+ nits for outdoor or bright-room use."},
+  {c:"Display", k:["srgb","color accurate","100% srgb","dci-p3"], g:true, t:"A real, measurable color spec. Its absence from a listing usually means the panel is weak.", r:"Essential for photo and video work."},
+  {c:"Display", k:["120hz","144hz","high refresh","165hz"], g:true, t:"Smoother motion. Real for gaming; noticeable but optional for everything else.", r:"Costs battery life. Check that it can be toggled down."},
+  {c:"Display", k:["oled"], g:true, t:"Excellent contrast and color. Genuinely better for media and creative work.", r:"Slight burn-in risk with static interfaces over years."},
+  // Battery
+  {c:"Battery", k:["up to 18 hours","up to 20 hours","all day battery","up to 15 hours","hours battery","battery life"], g:false, t:"Battery figures come from looping local video at low brightness with radios off. Real mixed use typically lands at 40–60% of the claim.", r:"Search reviews for 'real world battery' before trusting the number."},
+  {c:"Battery", k:["whr","watt-hour","mah","53whr"], g:true, t:"The actual capacity figure. Harder to spin than an hours claim — bigger is better at a given efficiency.", r:"Compare Whr across models rather than advertised hours."},
+  {c:"Battery", k:["fast charge","rapid charge","80% in"], g:false, t:"Fast-charge claims usually describe only the first portion of the charge, which is always the quickest part.", r:"The last 20% is slow on every laptop."},
+  // Marketing language
+  {c:"Marketing", k:["military grade","military-grade","mil-std","rugged"], g:false, t:"Usually refers to MIL-STD-810, a testing standard manufacturers can self-certify against without independent verification.", r:"It does not extend your warranty or cover accidental damage."},
+  {c:"Marketing", k:["ai pc","ai-powered","neural engine","npu","copilot+"], g:false, t:"An NPU is real hardware, but most consumer software doesn't use it yet. The label is currently doing more work than the chip.", r:"Don't pay a premium for capability you can't use today."},
+  {c:"Marketing", k:["gaming laptop","gamer","rgb"], g:false, t:"A styling category, not a performance guarantee. Plenty of machines marketed as gaming laptops carry entry-level GPUs.", r:"Check the GPU model, cooling, and screen refresh rate."},
+  {c:"Marketing", k:["was $","strikethrough","% off","limited time","only 1 left","deal"], g:false, t:"Reference prices are frequently inflated to manufacture a discount — the basis of a settled class action against HP over its own PC listings.", r:"Check the 90-day price history before believing the markdown."},
+  {c:"Marketing", k:["renewed","refurbished","open box"], g:false, t:"Quality varies enormously by who refurbished it. Manufacturer-refurbished is usually safe; third-party is a gamble.", r:"Check who warranties it and for how long."},
+  {c:"Marketing", k:["premium build","ultra-thin","sleek","lightweight design"], g:false, t:"Thinness costs cooling. Thin machines throttle sooner, meaning the advertised CPU speed is less reachable.", r:"Look for sustained-load benchmarks, not peak numbers."},
+  {c:"Marketing", k:["best seller","#1","award winning","top rated"], g:false, t:"Popularity rankings are category-specific and often reset frequently. They describe sales, not quality.", r:"Read the 3-star reviews, not the 5-star ones."},
+  // Ports and extras
+  {c:"Ports", k:["thunderbolt","usb4"], g:true, t:"Fast data, display output, and charging over one port. A genuinely useful spec.", r:"Confirm the version — Thunderbolt 4 and 3 differ."},
+  {c:"Ports", k:["usb-c","type-c"], g:false, t:"USB-C describes the plug shape, not the speed. A USB-C port can be slow, fast, or display-capable.", r:"Look for the protocol behind the port."},
+  {c:"Ports", k:["wifi 6","wifi 7","wi-fi 6e"], g:true, t:"Current wireless standards with real speed benefits — if your router supports them too.", r:"No benefit on an older router."},
+  {c:"Ports", k:["bluetooth 5"], g:true, t:"Standard and fine. Not a differentiator between machines.", r:"Ignore this in comparisons."},
+  // Warranty
+  {c:"Warranty", k:["warranty","1 year limited","accidental damage","protection plan"], g:false, t:"Standard coverage is one year and excludes drops and spills. Extended plans are high-margin products for the retailer.", r:"Check whether your credit card already extends warranties."}
+];
+const input=document.getElementById("decode-input"),result=document.getElementById("decode-result"),
+chipsEl=document.getElementById("chips"),filterEl=document.getElementById("cat-filter");
+const cats=[...new Set(dictionary.map(d=>d.c))];let activeCat=cats[0];
+const examples={RAM:["8GB RAM","16GB RAM","soldered RAM","32GB RAM"],
+CPU:["Intel Core i7","Core i3","up to 4.7GHz","Apple M3","16 cores"],
+GPU:["NVIDIA graphics","RTX 4050","4GB graphics","integrated graphics"],
+Storage:["256GB SSD","eMMC","up to 1TB","NVMe"],
+Display:["HD display","4K display","300 nits","144Hz","OLED"],
+Battery:["up to 18 hours","53Whr","fast charge"],
+Marketing:["military grade","AI PC","50% off","gaming laptop","ultra-thin"],
+Ports:["Thunderbolt","USB-C","WiFi 6"],Warranty:["1 year limited warranty"]};
+function renderFilters(){filterEl.innerHTML="";cats.forEach(c=>{const b=document.createElement("button");
+b.className="pill";b.textContent=c;b.setAttribute("aria-pressed",c===activeCat?"true":"false");
+b.onclick=()=>{activeCat=c;renderFilters();renderChips();};filterEl.appendChild(b);});}
+function renderChips(){chipsEl.innerHTML="";(examples[activeCat]||[]).forEach(t=>{const b=document.createElement("button");
+b.className="chip";b.textContent=t;b.onclick=()=>decode(t);chipsEl.appendChild(b);});}
+function decode(term){input.value=term;const q=term.toLowerCase().trim();
+if(!q){result.innerHTML="";return;}
+const hits=dictionary.filter(d=>d.k.some(k=>q.includes(k)));
+if(!hits.length){result.innerHTML='<div class="verdict"><span class="tag neutral">NOT IN DATABASE</span><p>No entry for that yet. Try a component name, a capacity, or a phrase from the listing.</p></div>';return;}
+result.innerHTML=hits.slice(0,3).map((h,i)=>`<div class="verdict ${h.g?"good":"warn"}" style="animation-delay:${i*70}ms">
+<span class="tag ${h.g?"good":"warn"}">${h.g?"SOLID SPEC":"READ CAREFULLY"}</span><p>${h.t}</p><p class="real">${h.r}</p></div>`).join("");}
+input.addEventListener("input",()=>decode(input.value));
+renderFilters();renderChips();
+
+/* ---------- GUIDE (tiers & prices page) ---------- */
+const categories=[
+{id:"everyday",label:"Everyday / School",body:[["CPU","Core i3/N-series or Ryzen 3, current gen"],["RAM","8GB (16GB if you can stretch)"],["Storage","256\u2013512GB SSD"],["Screen","1080p, 15.6\""],["Skip paying for","Discrete GPU, high-refresh screen"]],
+pick:{name:"Acer Aspire 3 (A315), Ryzen 5",price:"~$350\u2013450",why:"A full keyboard with numpad, an 8GB/SSD build that handles docs, browsers and video calls, and a price that fits a real school budget \u2014 look specifically for the Ryzen 5 config over the cheaper entry chip.",url:"https://www.techloy.com/5-efficient-budget-laptops-for-students-in-2026/"}},
+{id:"cs",label:"CS / Development",body:[["CPU","Core i5, current gen"],["RAM","16GB \u2014 non-negotiable for an IDE plus a browser"],["Storage","512GB SSD"],["Other","A real keyboard matters more here than a GPU"],["Skip paying for","A GPU, unless you're training models locally"]],
+pick:{name:"Acer Aspire 14 (A14-51M)",price:"~$450\u2013550",why:"A 10-core current-gen chip with 16GB RAM and 512GB storage out of the box \u2014 the RAM most budget laptops make you pay extra for is already here, which matters more for an IDE than a fast GPU would.",url:"https://blog.acer.com/en/discussion/2999/best-budget-laptops-for-students-in-2025-from-acer"}},
+{id:"creative",label:"Creative work",body:[["CPU","Core i5/i7 or Ryzen 5/7"],["RAM","16GB minimum for photo, more strains a budget fast"],["Storage","512GB\u20131TB \u2014 media fills drives fast"],["Screen","1080p IPS; true color accuracy is a premium feature"],["Skip paying for","A gaming GPU you won't use for editing"]],
+pick:{name:"Acer Aspire 5 Spin 14",price:"~$550\u2013650",why:"A touchscreen with stylus support for sketching or annotating, in a price bracket where most competitors still don't offer one. Not a color-accurate panel \u2014 that upgrade starts well above student-budget territory.",url:"https://blog.acer.com/en/discussion/1680/acer-aspire-vs-acer-swift-a-student-laptop-showdown"}},
+{id:"gaming",label:"Gaming",body:[["GPU","RTX 4050 at this budget \u2014 4060 costs more"],["CPU","Ryzen 5/7, current-ish gen"],["RAM","16GB"],["Storage","512GB, ideally 1TB"],["Watch for","The same RTX 4050 laptop listed $200\u2013400 apart"]],
+pick:{name:"Acer Nitro V 15 / HP Victus 15, RTX 4050",price:"~$600\u2013800",why:"A real RTX 4050 with 16GB RAM at a price where sellers try to pass off integrated graphics as a 'gaming laptop.' Reviewers found this exact tier repeatedly discounted to $599\u2013799 \u2014 don't pay full sticker for it.",url:"https://www.laptopmag.com/laptops/gaming-laptops-pcs/3-rtx-4050-gaming-laptop-deals-for-under-usd800-at-best-buy"}},
+{id:"portable",label:"Travel / Ultraportable",body:[["Weight","Under 4 lbs"],["Battery","Reviewed real hours, not the box claim"],["CPU","Efficient N-series or Core i3"],["RAM","8GB, usually soldered"],["Skip paying for","A high-wattage chip that kills battery"]],
+pick:{name:"Acer Aspire Go 15",price:"~$300\u2013400",why:"Tested at 10+ hours of real battery life with a comfortable keyboard and full port selection. Trade-offs at this price: a 720p webcam and noticeably slower performance under load.",url:"https://www.tomsguide.com/uk/best-picks/best-laptops-under-500"}}];
+
+const tabsEl=document.getElementById("cat-tabs"),panelsEl=document.getElementById("cat-panels");
+categories.forEach((cat,i)=>{
+const btn=document.createElement("button");btn.className="tab-btn";btn.textContent=cat.label;
+btn.setAttribute("role","tab");btn.setAttribute("aria-selected",i===0?"true":"false");
+btn.onclick=()=>selectTab(cat.id);tabsEl.appendChild(btn);
+const p=document.createElement("div");p.className="tab-panel"+(i===0?" active":"");p.id="panel-"+cat.id;
+p.innerHTML=cat.body.map(r=>`<div class="spec-row"><span class="k">${r[0]}</span><span class="v">${r[1]}</span></div>`).join("")
++`<div class="pick"><div><div class="label">REVIEWER'S PICK</div><div class="model">${cat.pick.name}</div><p class="why">${cat.pick.why}</p></div>
+<a class="btn" href="${cat.pick.url}" target="_blank" rel="noopener">See this pick</a></div>`;
+panelsEl.appendChild(p);});
+function selectTab(id){categories.forEach(c=>document.getElementById("panel-"+c.id).classList.toggle("active",c.id===id));
+[...tabsEl.children].forEach((b,i)=>b.setAttribute("aria-selected",categories[i].id===id?"true":"false"));}
+
+/* ---------- init ---------- */
+showPage(location.hash.slice(1)||"index");
+</script>
+</body>
+</html>

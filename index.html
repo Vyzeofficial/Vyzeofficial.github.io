@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyraTHS | About</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#aeb7c3;
+--line:#272c34;--green:#1fc47a;--accent:#4db6ff;--accent-dim:#11283b;--green-dim:#12331f;--red:#e6394b;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--accent);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--accent);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1 em{font-style:normal;color:var(--accent);}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--accent);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+.rise{opacity:0;transform:translateY(10px);}
+.rise.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise,.seq{opacity:1!important;transform:none!important;}}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:19ch;}
+body{overflow-wrap:break-word;}
+.specs dd{overflow-wrap:anywhere;}
+nav .links a{padding:8px 0;}button.btn{border:0;cursor:pointer;font-family:var(--display);}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:44px;align-items:start;padding:64px 0 54px;border-bottom:1px solid var(--line);}
+.hero h1{max-width:18ch;font-size:clamp(1.9rem,3.7vw,2.8rem);}
+.hero .lede{margin-bottom:24px;}
+.next{display:flex;gap:12px;flex-wrap:wrap;}
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px 16px;}
+.demo-top{display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;color:var(--muted);margin-bottom:12px;}
+.replay{all:unset;cursor:pointer;color:var(--accent);font-size:0.82rem;padding:4px 2px;}
+.replay:hover{text-decoration:underline;}
+.replay:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.listing{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:16px 18px;}
+.l-badge{margin-bottom:8px;font-size:0.78rem;}
+.l-badge mark{background-color:transparent;color:#f0a53a;}
+.l-title{font-family:var(--body);font-weight:500;font-size:1.02rem;line-height:1.55;margin:0 0 12px;}
+.l-price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+.l-price .now{font-family:var(--display);font-weight:700;font-size:1.6rem;}
+.l-price .was{text-decoration:line-through;color:var(--muted);font-size:0.9rem;}
+mark.flag{background-color:transparent;color:inherit;border-radius:3px;padding:1px 2px;cursor:pointer;background-image:linear-gradient(rgba(230,57,75,.38),rgba(230,57,75,.38));background-repeat:no-repeat;background-size:0% 100%;background-position:0 0;transition:background-size .55s cubic-bezier(.3,.7,.2,1),outline-color .2s;outline:2px solid transparent;outline-offset:1px;}
+mark.flag.on{background-size:100% 100%;}
+mark.flag.hot{outline-color:var(--accent);}
+.notes{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:2px;}
+.notes li{font-size:0.88rem;color:var(--muted);padding:6px 10px;border-left:3px solid var(--line);opacity:0;transform:translateX(-8px);transition:opacity .4s ease,transform .4s ease,border-color .3s,background-color .2s;}
+.notes li.on{opacity:1;transform:none;border-left-color:var(--red);}
+.notes li.hot{background:var(--accent-dim);color:var(--ink);}
+.notes li b{color:var(--ink);font-weight:600;}
+.demo-foot{margin:12px 0 0;font-size:0.8rem;color:var(--muted);}
+.gap{padding-top:50px;}
+.bars{display:grid;gap:12px;max-width:640px;margin-bottom:12px;}
+.bar-row{display:grid;grid-template-columns:130px 1fr 44px;align-items:center;gap:12px;font-size:0.9rem;}
+.bar-label{color:var(--muted);}
+.bar-track{background:var(--surface);border-radius:4px;height:26px;overflow:hidden;}
+.bar-fill{height:100%;width:0;border-radius:4px;transition:width 1.3s cubic-bezier(.2,.7,.2,1);}
+.bar-fill.claim{background:var(--line);}
+.bar-fill.test{background:var(--accent);}
+.bar-val{font-family:var(--display);font-weight:700;text-align:right;}
+.bar-src{font-size:0.8rem;color:var(--muted);margin:0;}
+.start{padding-bottom:30px;border-bottom:none;}
+.rows{border-top:1px solid var(--line);margin-top:18px;}
+.row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;position:relative;}
+.row::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--accent);transition:width .4s ease;}
+.row:hover::after,.row:focus-visible::after{width:100%;}
+.row-t{font-family:var(--display);font-weight:600;font-size:1.3rem;transition:color .2s;}
+.row:hover .row-t{color:var(--accent);}
+.row-d{color:var(--muted);max-width:60ch;align-self:center;}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:30px;padding:36px 0 36px;}.hero h1{max-width:20ch;}}
+@media (max-width:640px){.bar-row{grid-template-columns:96px 1fr 38px;gap:8px;font-size:0.84rem;}.row{grid-template-columns:1fr;gap:6px;padding:18px 0;}.demo{padding:14px;}}
+/* orchestrated page-load sequence */
+.seq{opacity:0;transform:translateY(10px);animation:seqIn .6s cubic-bezier(.2,.7,.3,1) forwards;animation-delay:var(--d,0ms);}
+@keyframes seqIn{to{opacity:1;transform:none;}}
+
+@media (max-width:640px){
+.wrap{padding:0 16px;}
+nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;gap:0 14px;}
+nav .links{width:100%;flex-wrap:wrap;gap:0 18px;font-size:0.9rem;}
+header.top{padding:34px 0 26px;}
+section{padding:32px 0;}
+.decoder{padding:16px;}
+.grid{grid-template-columns:1fr;}
+.bhead .cnt{margin-left:0;}
+.self{padding:16px;}
+.btn{padding:12px 16px;}
+.tab-btn{padding:10px 12px;}
+.pill,.chip{padding:8px 12px;}
+.case{padding:16px;}
+.flags{padding:6px 16px;}
+.step{padding:16px;}
+.fine a,.case .src a{display:inline-block;padding:8px 2px;}
+.btn,.pill,.chip,.tab-btn,.drop-toggle{min-height:40px;}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="index.html">Syra<b>THS</b></a>
+<div class="links"><a class="on" href="index.html">Home</a><a class="" href="decoder.html">Decoder</a><a class="" href="checker.html">Checker</a><a class="" href="top-laptops.html">Top laptops</a><a class="" href="evidence.html">Evidence</a></div>
+</div></nav>
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-copy">
+    <h1 class="seq" style="--d:0ms">Most laptop listings are written to sell you something. We read them for you.</h1>
+    <p class="lede seq" style="--d:120ms">The words on a listing and the hardware in the box often don't match. We are building tools to help users know what they are buying. There is no account to make, and we earn nothing from the laptops we link to.</p>
+    <div class="next seq" style="--d:240ms">
+      <a class="btn" href="decoder.html">Decode a spec</a>
+      <a class="btn ghost" href="top-laptops.html">See top laptops</a>
+    </div>
+  </div>
+
+  <div class="demo seq" style="--d:360ms" id="demo">
+    <div class="demo-top"><span>Example listing</span><button type="button" class="replay" id="replay">Replay</button></div>
+    <div class="listing">
+      <div class="l-badge"><mark class="flag" data-n="5">#1 Best Seller</mark></div>
+      <h2 class="l-title">NOVA Pro 17 Newest <mark class="flag" data-n="1">Gaming Laptop</mark>, <mark class="flag" data-n="2">12th Quad-Core Processor</mark>, 16GB RAM, 512GB SSD, 17.3" Display, <mark class="flag" data-n="3">Up to 18 Hours</mark> Battery</h2>
+      <div class="l-price"><span class="now">$329.00</span><mark class="flag was" data-n="4">List price $1,499.00</mark></div>
+    </div>
+    <ol class="notes" id="notes">
+      <li data-n="1"><b>Gaming Laptop.</b> No graphics card is named. Games need one.</li>
+      <li data-n="2"><b>12th Quad-Core Processor.</b> Which chip? The listing never says.</li>
+      <li data-n="3"><b>Up to 18 Hours.</b> The best result in a lab test, not typical use.</li>
+      <li data-n="4"><b>List price $1,499.00.</b> A price the laptop may never have sold at.</li>
+      <li data-n="5"><b>#1 Best Seller.</b> A sales rank inside a tiny category, not a quality score.</li>
+    </ol>
+    <p class="demo-foot">We made this listing up. Every move in it comes from real ones on the <a href="evidence.html">Evidence page</a>.</p>
+  </div>
+</header>
+
+<section class="gap">
+  <h2 class="rise">What "up to" means in practice</h2>
+  <p class="section-note rise">A battery claim is the best result from a manufacturer's test. HP lists its OmniBook 5 at up to 34 hours. Tom's Guide ran its own test and got 16.</p>
+  <div class="bars rise" id="bars">
+    <div class="bar-row"><span class="bar-label">HP's claim</span><div class="bar-track"><div class="bar-fill claim" data-v="34"></div></div><span class="bar-val" data-v="34">0</span></div>
+    <div class="bar-row"><span class="bar-label">Tom's Guide test</span><div class="bar-track"><div class="bar-fill test" data-v="16" data-of="34"></div></div><span class="bar-val" data-v="16">0</span></div>
+  </div>
+  <p class="bar-src rise">Hours of battery life. Source: <a href="https://www.tomsguide.com/computing/laptops/hp-omnibook-5-series-laptops-promise-unbelievable-battery-life-at-a-usd799-starting-price" target="_blank" rel="noopener">Tom's Guide</a>.</p>
+</section>
+
+<section class="start">
+  <h2 class="rise">Where to start</h2>
+  <div class="rows">
+    <a class="row rise" href="decoder.html"><span class="row-t">Decoder</span><span class="row-d">Type in a CPU, a GPU, an amount of RAM or a phrase like "military grade" and read what it means in daily use.</span></a>
+    <a class="row rise" href="checker.html"><span class="row-t">Listing checker</span><span class="row-d">Paste a whole listing and see which claims are vague, inflated or missing, with the reason for each.</span></a>
+    <a class="row rise" href="top-laptops.html"><span class="row-t">Top laptops</span><span class="row-d">Well-reviewed laptops for school, coding, creative work, gaming and travel, sorted by price, each with specs and a store link.</span></a>
+    <a class="row rise" href="evidence.html"><span class="row-t">Evidence</span><span class="row-d">Court cases, regulator findings and reviewer tests showing that misleading listings are common.</span></a>
+  </div>
+</section>
+<footer>SyraTHS does not sell laptops, and it earns nothing when you click a store link. Buy buttons go to the store's own page or a search for that model.</footer>
+</div>
+
+<script>
+(function(){
+  const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const flags=[...document.querySelectorAll("mark.flag")],notes=[...document.querySelectorAll("#notes li")];
+  const byN=n=>[...flags.filter(f=>f.dataset.n===n),...notes.filter(l=>l.dataset.n===n)];
+  const order=["1","2","3","4","5"];
+  let timers=[];
+  function reset(){timers.forEach(clearTimeout);timers=[];flags.forEach(f=>f.classList.remove("on","hot"));notes.forEach(l=>l.classList.remove("on","hot"));}
+  function show(n){byN(n).forEach(e=>e.classList.add("on"));}
+  function play(){
+    reset();
+    if(reduce){order.forEach(show);return;}
+    order.forEach((n,i)=>{timers.push(setTimeout(()=>show(n),1100+i*850));});
+  }
+  function hot(n,on){byN(n).forEach(e=>e.classList.toggle("hot",on));}
+  [...flags,...notes].forEach(e=>{
+    e.addEventListener("mouseenter",()=>hot(e.dataset.n,true));
+    e.addEventListener("mouseleave",()=>hot(e.dataset.n,false));
+    e.addEventListener("click",()=>{show(e.dataset.n);hot(e.dataset.n,true);setTimeout(()=>hot(e.dataset.n,false),1400);});
+  });
+  document.getElementById("replay").addEventListener("click",play);
+  play();
+  /* battery bars grow when scrolled into view */
+  const bars=document.getElementById("bars");
+  function runBars(){
+    bars.querySelectorAll(".bar-fill").forEach(b=>{const v=+b.dataset.v,of=+(b.dataset.of||b.dataset.v);b.style.width=(v/34*100)+"%";});
+    bars.querySelectorAll(".bar-val").forEach(el=>{
+      const to=+el.dataset.v;if(reduce){el.textContent=to;return;}
+      const t0=performance.now(),dur=1300;
+      (function tick(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(tick);})(t0);
+    });
+  }
+  if(reduce){runBars();}
+  else{const o=new IntersectionObserver((es)=>{if(es[0].isIntersecting){runBars();o.disconnect();}},{threshold:.5});o.observe(bars);}
+})();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*55)+'ms';io.observe(el);});
+</script>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyraTHS | Top laptops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#aeb7c3;
+--line:#272c34;--green:#1fc47a;--accent:#4db6ff;--accent-dim:#11283b;--green-dim:#12331f;--red:#e6394b;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--accent);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--accent);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1 em{font-style:normal;color:var(--accent);}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--accent);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+.rise{opacity:0;transform:translateY(10px);}
+.rise.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise,.seq{opacity:1!important;transform:none!important;}}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:19ch;}
+body{overflow-wrap:break-word;}
+.specs dd{overflow-wrap:anywhere;}
+nav .links a{padding:8px 0;}button.btn{border:0;cursor:pointer;font-family:var(--display);}
+
+header.top{padding:60px 0 34px;border-bottom:1px solid var(--line);}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:18ch;}
+.lede{max-width:62ch;color:var(--muted);font-size:1.04rem;margin:0;}
+section{padding:40px 0 20px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.82rem;text-decoration:none;background:var(--accent);color:#06120b;padding:8px 14px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;border-top:1px solid var(--line);margin-top:30px;}
+.note{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:16px 20px;margin:0 0 22px;color:var(--muted);font-size:0.88rem;}
+.note strong{color:var(--ink);}
+.filters-label{font-size:0.84rem;color:var(--muted);margin:0 0 8px;}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.tab-btn{font-family:var(--body);font-size:0.89rem;padding:8px 14px;border-radius:7px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.18s;display:flex;gap:8px;align-items:center;}
+.tab-btn .n{font-family:var(--display);font-size:0.72rem;background:var(--surface-2);border-radius:7px;padding:1px 8px;color:var(--muted);}
+.tab-btn:hover{border-color:var(--accent);color:var(--accent);}
+.tab-btn[aria-selected="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
+.tab-btn[aria-selected="true"] .n{background:var(--bg);color:var(--accent);}
+.pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.pill{font-family:var(--body);font-size:0.78rem;padding:5px 12px;border-radius:7px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.18s;}
+.pill:hover{border-color:var(--accent);color:var(--accent);}
+.pill[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;animation:fade .3s ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.look{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:8px;font-size:0.9rem;color:var(--muted);}
+.look b{font-weight:600;color:var(--accent);margin-right:8px;}
+.bracket{margin-top:30px;}
+.bracket.hide{display:none;}
+.bhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:14px;}
+.bhead h2{margin:0;font-size:1.25rem;}
+.bhead .range{font-family:var(--display);color:var(--accent);font-weight:700;font-size:1rem;}
+.bhead .cnt{margin-left:auto;color:var(--muted);font-size:0.78rem;}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:0.88rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,border-color .2s;}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);}
+.tag{align-self:flex-start;font-family:var(--display);font-size:0.74rem;color:var(--accent);background:var(--accent-dim);border-radius:7px;padding:3px 8px;}
+.card h3{margin:0;font-size:1.08rem;line-height:1.25;}
+.price{font-family:var(--display);font-weight:700;color:var(--accent);font-size:1.25rem;line-height:1.2;}
+.price small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:0.72rem;margin-top:2px;}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;background:var(--surface-2);border-radius:7px;padding:10px 12px;font-size:0.8rem;}
+.specs dt{color:var(--muted);}
+.specs dd{margin:0;color:var(--ink);}
+.card .btn{align-self:flex-start;}
+.fine{margin-top:auto;padding-top:8px;border-top:1px solid var(--line);font-size:0.72rem;line-height:1.5;color:var(--muted);}
+.fine p{margin:0 0 4px;}
+.fine .src{font-size:0.68rem;}
+.fine a{color:var(--muted);}
+.fine a:hover{color:var(--accent);}
+.self{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:22px;margin-top:34px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;}
+.self p{margin:0;color:var(--muted);font-size:0.9rem;max-width:56ch;}
+.src-line{color:var(--muted);font-size:0.9rem;margin:0 0 22px;}
+a.step{display:block;color:inherit;text-decoration:none;}
+.cardtop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.cmp-pick{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);cursor:pointer;white-space:nowrap;}
+.cmp-pick input{width:16px;height:16px;accent-color:#4db6ff;margin:0;cursor:pointer;}
+.spec-btn{all:unset;cursor:pointer;color:var(--ink);text-decoration:underline dotted var(--muted);text-underline-offset:3px;}
+.spec-btn:hover,.spec-btn[aria-expanded="true"]{color:var(--accent);text-decoration-color:var(--accent);}
+.spec-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.def{border-left:3px solid var(--line);padding:6px 0 6px 12px;font-size:0.8rem;color:var(--muted);}
+.def[hidden]{display:none;}
+.def.good{border-color:var(--green);}
+.def.warn{border-color:var(--red);}
+.def b{font-weight:600;font-size:0.8rem;color:var(--ink);}
+.def p{margin:4px 0 0;}
+.def .real{color:var(--ink);}
+.def a{display:inline-block;margin-top:4px;color:var(--accent);}
+.why{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin:0 0 22px;font-size:0.9rem;color:var(--muted);}
+.why summary{cursor:pointer;color:var(--ink);font-weight:500;}
+.why p{margin:10px 0 0;max-width:70ch;}
+.cmp-bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);z-index:40;padding:10px 0;}
+.cmp-bar[hidden],.cmp-panel[hidden]{display:none;}
+.cmp-bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:0.9rem;}
+.cmp-actions{display:flex;gap:8px;}
+.cmp-actions .btn{cursor:pointer;font-family:var(--display);}
+.cmp-actions .btn[disabled]{opacity:.45;cursor:not-allowed;}
+body.has-bar{padding-bottom:72px;}
+body.no-scroll{overflow:hidden;}
+.cmp-panel{position:fixed;inset:0;background:var(--bg);z-index:60;overflow:auto;padding:20px 0 40px;}
+.cmp-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;}
+.cmp-head h2{margin:0;}
+.cmp-head .btn{cursor:pointer;}
+.cmp-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;}
+.cmp-table{border-collapse:collapse;width:100%;min-width:560px;font-size:0.88rem;}
+.cmp-table th,.cmp-table td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+.cmp-table thead th{font-family:var(--display);font-size:0.95rem;background:var(--surface);}
+.cmp-table tbody th{color:var(--muted);font-weight:500;white-space:nowrap;position:sticky;left:0;background:var(--bg);}
+.cmp-table tr:last-child td,.cmp-table tr:last-child th{border-bottom:none;}
+.cmp-price{font-family:var(--display);color:var(--accent);font-size:1.05rem;}
+.cmp-table small{display:block;color:var(--muted);font-size:0.72rem;}
+.cmp-table .na{color:var(--muted);}
+.cmp-rm{all:unset;cursor:pointer;font-family:var(--body);font-size:0.72rem;color:var(--muted);text-decoration:underline;margin-top:4px;display:inline-block;}
+.cmp-src{font-size:0.75rem;}
+.cmp-src a{color:var(--muted);}
+@media (max-width:640px){.cmp-table tbody th{min-width:84px;}.cmp-table th,.cmp-table td{padding:10px;}.cmp-pick{font-size:0.82rem;}.cmp-pick input{width:20px;height:20px;}}
+
+/* motion: cards settle in when the tab or price filter changes; panels answer clicks */
+.card.pop{animation:cardPop .45s cubic-bezier(.2,.7,.3,1) both;animation-delay:calc(var(--i,0)*45ms);}
+@keyframes cardPop{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.cmp-bar:not([hidden]){animation:barUp .3s cubic-bezier(.2,.7,.3,1);}
+@keyframes barUp{from{transform:translateY(100%);}to{transform:none;}}
+.cmp-panel:not([hidden]){animation:panelIn .28s ease;}
+@keyframes panelIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.def:not([hidden]){animation:defIn .25s ease;}
+@keyframes defIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+
+@media (max-width:640px){
+.wrap{padding:0 16px;}
+nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;gap:0 14px;}
+nav .links{width:100%;flex-wrap:wrap;gap:0 18px;font-size:0.9rem;}
+header.top{padding:34px 0 26px;}
+section{padding:32px 0;}
+.decoder{padding:16px;}
+.grid{grid-template-columns:1fr;}
+.bhead .cnt{margin-left:0;}
+.self{padding:16px;}
+.btn{padding:12px 16px;}
+.tab-btn{padding:10px 12px;}
+.pill,.chip{padding:8px 12px;}
+.case{padding:16px;}
+.flags{padding:6px 16px;}
+.step{padding:16px;}
+.fine a,.case .src a{display:inline-block;padding:8px 2px;}
+.btn,.pill,.chip,.tab-btn,.drop-toggle{min-height:40px;}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="index.html">Syra<b>THS</b></a>
+<div class="links"><a class="" href="index.html">Home</a><a class="" href="decoder.html">Decoder</a><a class="" href="checker.html">Checker</a><a class="on" href="top-laptops.html">Top laptops</a><a class="" href="evidence.html">Evidence</a></div>
+</div></nav>
+<div class="wrap">
+
+<header class="top">
+  <h1 class="rise">The best-rated laptops, at every price point.</h1>
+  <p class="lede rise">Choose what you will use the laptop for, then see what reviewers recommend at each budget.</p>
+</header>
+
+<section>
+  <p class="src-line rise">Our sources are listed in small print under each listing. Prices last checked September 29, 2026.</p>
+  <details class="why rise"><summary>How we chose these laptops</summary>
+    <p>We do not test laptops ourselves. Each pick is a laptop that a review site named as the best for that use, such as PCWorld or Tom's Hardware. The price and specs on each card come from the review linked in its small print.</p>
+    <p>We sorted every laptop by its listed price and left out any recommendation we could not find a US price for. A laptop shows up under more than one use when several reviewers named it.</p>
+  </details>
+  <div class="filters-label rise">Use case</div>
+  <div class="tabs rise" role="tablist" id="cat-tabs"></div>
+  <div class="filters-label rise">Price point</div>
+  <div class="pills rise" id="price-pills"></div>
+  <div class="rise" id="cat-panels"></div>
+  <div class="self rise">
+    <p><strong>Want to pick your own?</strong> PCMag tests and ranks far more laptops than we list here.</p>
+    <a class="btn ghost" href="https://www.pcmag.com/picks/the-best-laptops" target="_blank" rel="noopener">Browse PCMag's best laptops</a>
+  </div>
+</section>
+<footer>SyraTHS does not sell laptops, and it earns nothing when you click a store link. Buy buttons go to the store's own page or a search for that model.</footer>
+<div class="cmp-bar" id="cmp-bar" hidden><div class="wrap cmp-bar-in"><span id="cmp-msg" aria-live="polite"></span><span class="cmp-actions"><button type="button" class="btn ghost" id="cmp-clear">Clear</button><button type="button" class="btn" id="cmp-go" disabled>Compare</button></span></div></div>
+<div class="cmp-panel" id="cmp-panel" role="dialog" aria-modal="true" aria-label="Compare laptops" hidden><div class="wrap"><div class="cmp-head"><h2>Compare laptops</h2><button type="button" class="btn ghost" id="cmp-close">Close</button></div><div class="cmp-scroll" id="cmp-body"></div></div></div>
+</div>
+
+<script>
+/* Sources: label + link to the review the price and specs came from */
+const U={
+pcw:["PCWorld","https://www.pcworld.com/article/436674/best-pc-laptops.html"],
+bm:["Back Market","https://www.backmarket.com/en-us/c/laptops/best-student-laptop-discounts"],
+newegg:["Newegg","https://www.newegg.com/insider/back-to-school-2026-best-laptops-college-students/"],
+trProg:["TechRadar","https://techradar.com/news/best-laptop-for-programming"],
+trEng:["TechRadar","https://www.techradar.com/news/the-best-laptops-for-engineering-students"],
+tgBat:["Tom's Guide","https://www.tomsguide.com/best-picks/best-laptops-for-battery-life"],
+thBest:["Tom's Hardware","https://www.tomshardware.com/laptops/best-laptops"],
+thGame:["Tom's Hardware","https://www.tomshardware.com/laptops/gaming-laptops/best-gaming-laptops"],
+thBud:["Tom's Hardware","https://www.tomshardware.com/laptops/gaming-laptops/best-budget-gaming-laptops"],
+medium:["a CS student's 2026 guide on Medium","https://medium.com/@rohan.singh1218/dont-buy-an-expensive-potato-the-early-2026-laptop-guide-for-computer-science-students-1fd54b2ef675"],
+mbVid:["Memeburn","https://memeburn.com/best-laptops-for-video-editing/"],
+mbUp:["Memeburn","https://memeburn.com/best-ultraportable-laptops/"],
+gsVid:["GuideSpot","https://www.guidespot.com/best-laptops-for-video-editing/"],
+dcw:["Digital Camera World","https://www.digitalcameraworld.com/buying-guides/the-best-laptop-for-video-editing"],
+gr:["GamesRadar","https://www.gamesradar.com/hardware/laptops/the-best-gaming-laptops-tested-by-experts/"],
+gj:["Gentleman's Journal","https://www.thegentlemansjournal.com/article/best-gaming-laptops/"],
+wcZen:["Windows Central","https://www.windowscentral.com/hardware/asus/asus-zenbook-a14-2026-review"],
+wcXps:["Windows Central","https://www.windowscentral.com/hardware/dell/xps-13-2026-launch-599"],
+tgOmni:["Tom's Guide","https://www.tomsguide.com/computing/laptops/hp-omnibook-5-series-laptops-promise-unbelievable-battery-life-at-a-usd799-starting-price"]
+};
+
+/* Where to buy: direct store page when we have one, otherwise a Best Buy search for the model */
+const BUY={
+neo:"https://www.amazon.com/Apple-2026-MacBook-13-inch-Laptop/dp/B0GR6BVYS5",
+air:"https://www.amazon.com/Apple-2026-MacBook-13-inch-Laptop/dp/B0GR1493ZV",
+mbp14:"https://www.apple.com/shop/buy-mac/macbook-pro/14-inch-m5",
+yoga:"https://www.bestbuy.com/product/lenovo-yoga-7i-2-in-1-16-2k-oled-touchscreen-laptop-intel-core-ultra-7-355-2026-24gb-memory-512gb-storage-luna-grey/JJGH3KXVZC",
+zen:"https://www.bestbuy.com/product/asus-zenbook-a14-14-oled-2k-display-snapdragon-x2-elite-2026-16gb-memory-512gb-storage-copilot-pc-zabriskie-beige/JJGHGSJZ3H",
+omni:"https://www.bestbuy.com/product/hp-omnibook-5-14-2k-oled-touch-screen-laptop-snapdragon-x-plus-2025-16gb-memory-512gb-ssd-copilot-pc-glacier-silver/JJGH2Y8G5F",
+xps13:"https://www.dell.com/en-us/shop/dell-laptops/new-xps-13-laptop/spd/xps13dx13260laptop",
+blade16:"https://www.razer.com/gaming-laptops/razer-blade-16/buy",
+legion5:"https://www.lenovo.com/buy/us/en/lenovo-legion-5-rtx-5060-laptops-0erz00a",
+t16:"https://www.microcenter.com/product/702646/lenovo-thinkpad-t16-gen-4-16-laptop-computer-eclipse-black"
+};
+function buyFor(p){
+  if(p.buy){const u=BUY[p.buy];
+    const store=u.includes("amazon")?"Amazon":u.includes("bestbuy")?"Best Buy":u.includes("dell.com")?"Dell":u.includes("razer")?"Razer":u.includes("lenovo.com")?"Lenovo":u.includes("microcenter")?"Micro Center":u.includes("apple.com")?"Apple":"the store";
+    return {url:u,label:"Buy at "+store};}
+  return {url:"https://www.bestbuy.com/site/searchpage.jsp?st="+encodeURIComponent(p.q||p.n),label:"Find at Best Buy"};
+}
+
+const BR=[
+{id:"entry",label:"Entry",range:"Under $700"},
+{id:"everyday",label:"Everyday",range:"$700 – $1,299"},
+{id:"performance",label:"Performance",range:"$1,300 – $1,999"},
+{id:"enthusiast",label:"Enthusiast",range:"$2,000 and up"},
+{id:"varies",label:"Priced by configuration",range:"Price varies"}
+];
+
+/* picks: b = price point id, sp = specs, s = source keys, buy = key in BUY, q = search text override */
+const categories=[
+{id:"everyday",label:"Everyday / School",look:"Aim for 16GB of RAM and a 512GB SSD. You can skip a discrete GPU. Weight and battery life matter more than raw speed.",
+empty:{enthusiast:"Reviewers don't recommend spending this much for school work. Past about $1,300, the extra money goes into graphics power and screens that coursework doesn't use."},
+picks:[
+{b:"entry",n:"ASUS Chromebook Plus CX34",tag:"BEST CHROMEBOOK",price:"$499",pn:"as reviewed",sp:{CPU:"Intel Core i5-1335U",RAM:"8GB",Storage:"128GB UFS",Screen:"14-inch 1920×1080 touch",Weight:"3.17 lb",Battery:"13 hrs"},note:"PCWorld's Chromebook pick. Fine for browser-based coursework, but check that your classes don't need Windows or Mac software.",s:["pcw"]},
+{b:"entry",n:"MacBook Neo",tag:"BEST BUDGET",price:"$599",pn:"on sale; $699 list price",sp:{CPU:"Apple A18 Pro",RAM:"8GB",Storage:"256GB",Screen:"13-inch 2408×1506",Weight:"2.7 lb",Battery:"13 hrs"},note:"Named the budget pick by both PCWorld and Back Market. 8GB of memory is the trade-off, and it can't be added later.",s:["pcw"],buy:"neo"},
+{b:"entry",n:"Acer Aspire Go 15",tag:"BEST VALUE WINDOWS",price:"$599.99",pn:"Newegg, July 28, 2026",sp:{CPU:"AMD Ryzen 7 5825U",RAM:"16GB DDR4",Storage:"512GB SSD",Screen:"15-inch",OS:"Windows 11 Home"},note:"Not exotic hardware, but Newegg says it keeps thirty browser tabs, a PDF reader, a spreadsheet and a video call running without stuttering.",s:["newegg"]},
+{b:"everyday",n:"ASUS Vivobook 15.6\" touchscreen",tag:"BEST FOR ANNOTATION",price:"$719.99",pn:"Newegg",sp:{CPU:"Intel Core i5-1334U",RAM:"16GB",Storage:"512GB SSD",Screen:"15.6-inch touch"},note:"Newegg's pick for students who mark up diagrams, sketch, or read hundreds of pages a week, since a touchscreen helps more than people expect.",s:["newegg"]},
+{b:"everyday",n:"Lenovo Yoga 7i 16",tag:"BEST WINDOWS FOR COLLEGE",price:"from $899.99",pn:"Back Market lists $899.99 to $949.99",sp:{CPU:"Intel Core Ultra",RAM:"16–32GB",Storage:"512GB–1TB",Screen:"14 or 16-inch IPS/OLED touch",Weight:"about 4 lb",Battery:"up to 13 hrs"},note:"Back Market's top Windows laptop for college students.",s:["bm"],buy:"yoga"},
+{b:"everyday",n:"Lenovo IdeaPad Slim 3 (15.3\")",tag:"HEAVY SOFTWARE",price:"$899.99",pn:"Newegg",sp:{CPU:"AMD Ryzen 7 8840HS",RAM:"16GB",Storage:"512GB SSD",Screen:"15.3-inch"},note:"Newegg's pick for engineering, data science, GIS, and design programs.",s:["newegg"]},
+{b:"everyday",n:"Dell Pro 16",tag:"BEST FOR IT AND BUSINESS",price:"$929.99",pn:"Newegg",sp:{CPU:"Intel Core 5 120U with vPro",Screen:"16-inch Full HD+"},note:"Newegg's pick for business and IT students who need a machine that is easy to manage.",s:["newegg"]},
+{b:"everyday",n:"MacBook Air 13 (M5)",tag:"BEST MAC FOR COLLEGE",price:"$1,099",pn:"base model, Tom's Hardware",sp:{CPU:"Apple M5 10-core",RAM:"16GB",Storage:"512GB",Screen:"13.6-inch 2560×1664",Weight:"2.7 lb"},note:"Back Market's Apple pick and Tom's Hardware's best overall laptop. Fanless and light, with long battery life.",s:["thBest","bm"],buy:"air"},
+{b:"everyday",n:"Acer Swift 16 AI (Lunar Lake)",tag:"BEST COLLEGE LAPTOP (PCWORLD)",price:"$1,199.99",pn:"as reviewed",sp:{CPU:"Intel Core Ultra 7 256V",RAM:"16GB LPDDR5X",Storage:"1TB SSD",Screen:"16-inch 2880×1800 OLED",Weight:"3.37 lb",Battery:"17.5 hrs"},note:"PCWorld's pick for college, with a big OLED screen and very long battery life.",s:["pcw"]},
+{b:"performance",n:"Acer Swift 16 AI (Panther Lake)",tag:"BEST OVERALL (PCWORLD)",price:"$1,551",pn:"Best Buy, per PCWorld",sp:{CPU:"Intel Core Ultra X7 358H",RAM:"32GB LPDDR5X",Storage:"1TB Gen5 SSD",Screen:"16-inch 2880×1800 OLED touch, 120Hz",Weight:"3.42 lb",Battery:"about 18.5 hrs"},note:"PCWorld's best laptop for most people. Feels consistently fast and lasts nearly a full day and a half.",s:["pcw"]}
+]},
+{id:"cs",label:"CS / Development",look:"16GB of RAM is the floor, and 32GB helps if you run virtual machines or containers. Windows with WSL, macOS and Linux all work for coding. Chromebooks do not.",
+empty:{entry:"No review we found names a computer science laptop under $700. The Acer Aspire Go 15 on the Everyday tab ($599.99) has the 16GB of RAM developers need as a minimum, but check that it fits your course's software."},
+picks:[
+{b:"everyday",n:"MacBook Air 13 (M5)",tag:"BEST FOR STUDENTS",price:"$1,099",pn:"base model, Tom's Hardware",sp:{CPU:"Apple M5 10-core",RAM:"16GB (up to 24GB)",Storage:"512GB",Screen:"13.6-inch 2560×1664",Weight:"2.7 lb",Battery:"15.5 hrs tested"},note:"TechRadar's best MacBook for programming students. The fanless design throttles under long heavy builds.",s:["thBest","trProg"],buy:"air"},
+{b:"everyday",n:"Lenovo Yoga 7i 16",tag:"LENOVO WINDOWS PICK",price:"from $899.99",pn:"Back Market lists $899.99 to $949.99",sp:{CPU:"Intel Core Ultra",RAM:"16–32GB",Storage:"512GB–1TB",Screen:"14 or 16-inch IPS/OLED touch",Weight:"about 4 lb",Battery:"up to 13 hrs"},note:"Back Market says the best CS laptop is usually a Windows laptop from Lenovo or Acer, and names this its top Windows pick for college.",s:["bm"],buy:"yoga"},
+{b:"everyday",n:"Lenovo ThinkPad P16 Gen 2",tag:"BEST FOR AI AND DATA SCIENCE",price:"$899",pn:"sale price, TechRadar",sp:{CPU:"up to Intel Core i9-13980HX",RAM:"up to 192GB",Storage:"up to 8TB",Screen:"16-inch 2.5K (4K OLED option)",Battery:"about 7 hrs general use, about 3 hrs under heavy load"},note:"TechRadar's pick for AI and data science work. It is an older workstation model, so the sale price will not last and the battery drains fast under load.",s:["trProg"]},
+{b:"performance",n:"Dell XPS 14 (2026)",tag:"BEST FOR FULL-STACK DEV",price:"from $1,600",pn:"Tom's Hardware",sp:{CPU:"Intel Core Ultra 7 355 (up to X7 358H)",RAM:"up to 64GB",Storage:"up to 2TB",Screen:"14-inch 1920×1200 (2.8K OLED option)",Weight:"3 lb",Battery:"20 hrs 41 min tested; OLED config 12 hrs 19 min"},note:"TechRadar's pick for full-stack developers. The battery figure depends on which screen you choose.",s:["thBest","trProg"]},
+{b:"performance",n:"MacBook Pro 14 (M5)",tag:"BEST MAC FOR DEV",price:"$1,839",pn:"Tom's Guide",sp:{CPU:"Apple M5 10-core",GPU:"10-core",RAM:"16–32GB",Storage:"512GB–4TB",Screen:"14.2-inch 3024×1964, 120Hz",Weight:"3.4 lb",Battery:"18 hrs"},note:"TechRadar's best MacBook for programming. RTINGS' top-rated programming laptop is the 2024 MacBook Pro 14.",s:["tgBat","trProg"],buy:"mbp14"},
+{b:"performance",n:"MSI Stealth A16 AI+",tag:"BEST FOR COMPUTER ENGINEERING",price:"$1,899.99",pn:"$1,749 on sale, TechRadar",sp:{CPU:"up to AMD Ryzen AI 9 HX 370",GPU:"up to RTX 5070",RAM:"up to 32GB",Storage:"up to 1TB",Screen:"16-inch QHD+ OLED"},note:"TechRadar's top pick for electrical and computer engineering students, chosen for power and portability.",s:["trEng"]},
+{b:"enthusiast",n:"Razer Blade 16",tag:"BEST FOR GAME DEVELOPMENT",price:"$2,399.99",pn:"TechRadar",sp:{CPU:"up to AMD Ryzen AI 9 HX 370",RAM:"32GB LPDDR5X",Storage:"up to 2TB",Screen:"16-inch QHD+ 2560×1600"},note:"TechRadar's pick for game development, praised for its performance. This configuration is priced lower than the 2026 model on the Creative tab.",s:["trProg"],q:"Razer Blade 16"},
+{b:"enthusiast",n:"ASUS ProArt P16",tag:"MACBOOK PRO ALTERNATIVE",price:"$2,599",pn:"TechRadar",sp:{CPU:"AMD Ryzen AI 9 HX 370",GPU:"RTX 5070 to 5090",RAM:"up to 64GB",Storage:"up to 2TB",Screen:"16-inch 4K OLED"},note:"TechRadar's Windows alternative to a MacBook Pro for engineering work.",s:["trEng"]},
+{b:"enthusiast",n:"MacBook Pro 16 (M5 Pro)",tag:"TOP-END DEV MACHINE",price:"$2,799",pn:"Tom's Guide; other reviews list $2,499 to $2,999",sp:{CPU:"Apple M5 Pro 18-core",GPU:"20-core",RAM:"24–64GB",Storage:"1–4TB",Screen:"16.2-inch 3456×2234, 120Hz",Weight:"4.7 lb",Battery:"21 hrs 10 min tested"},note:"A 4th-year CS student calls it the definitive choice for serious developers, with faster GPU cores for AI and ML work.",s:["tgBat","medium"]},
+{b:"varies",n:"Lenovo ThinkPad T16 Gen 4",tag:"BEST FOR PROGRAMMING",price:"Varies",pn:"depends on the configuration",sp:{CPU:"Intel Core Ultra 7 255U (as listed)",RAM:"32GB (up to 32GB)",Storage:"1TB (up to 2TB)",Screen:"16-inch 1920×1080"},note:"TechRadar's best balance of specs and power for general coding. The specs shown are from the Micro Center listing.",s:["trProg"],buy:"t16"}
+]},
+{id:"creative",label:"Creative work",look:"16GB of RAM is the minimum for 1080p and basic 4K, and multicam 4K wants 32GB. Color accuracy and ports matter as much as the GPU.",
+empty:{entry:"Reviewers don't recommend a creative-work laptop under $700. Start with the Everyday price point."},
+picks:[
+{b:"everyday",n:"Acer Nitro V (Core i7, RTX 4050)",tag:"BEST BUDGET EDITOR",price:"Under $1,000",pn:"GuideSpot",sp:{CPU:"Intel Core i7-13620H",GPU:"RTX 4050 6GB",RAM:"16GB DDR5",Storage:"1TB SSD",Screen:"15.6-inch 1080p, 165Hz"},note:"GuideSpot says it handles 1080p editing smoothly and basic 4K with proxy workflows.",s:["gsVid"],q:"Acer Nitro V RTX 4050"},
+{b:"everyday",n:"MacBook Air 13 (M5)",tag:"BEST FOR LIGHT EDITING",price:"$1,099",pn:"base model, Tom's Hardware",sp:{CPU:"Apple M5 10-core",RAM:"16GB",Storage:"512GB",Screen:"13.6-inch 2560×1664",Weight:"2.7 lb"},note:"Digital Camera World says it nails speed and portability for lighter editing. Drawbacks are few ports and no SD card slot.",s:["thBest","dcw"],buy:"air"},
+{b:"performance",n:"HP OMEN 16 OLED",tag:"BEST BUDGET (MEMEBURN)",price:"from $1,649",pn:"Memeburn",sp:{CPU:"Intel Core Ultra 7/9",GPU:"up to RTX 5070",RAM:"up to 32GB DDR5",Storage:"up to 2TB",Screen:"16-inch OLED, 165Hz"},note:"Memeburn's budget pick for video editing, and an OLED screen at that price.",s:["mbVid"]},
+{b:"performance",n:"MacBook Pro 14 (M5)",tag:"BEST FOR CREATIVES",price:"$1,839",pn:"Tom's Guide",sp:{CPU:"Apple M5 10-core",GPU:"10-core",RAM:"16–32GB",Storage:"512GB–4TB",Screen:"14.2-inch 3024×1964, 120Hz",Weight:"3.4 lb",Battery:"18 hrs"},note:"Tom's Guide's pick for creatives. Memeburn calls it the best portable video-editing laptop.",s:["tgBat","mbVid"],buy:"mbp14"},
+{b:"enthusiast",n:"Acer Predator Helios Neo 16S AI",tag:"BEST VALUE WINDOWS",price:"from $2,129",pn:"Memeburn",sp:{CPU:"Intel Core Ultra 9 290HX Plus",GPU:"up to RTX 5070 Ti",RAM:"up to 32GB DDR5",Screen:"16-inch OLED, up to 240Hz"},note:"Memeburn's best-value Windows laptop for video editing.",s:["mbVid"]},
+{b:"enthusiast",n:"ASUS ProArt P16",tag:"BEST WINDOWS CREATOR",price:"from $2,699.99",pn:"Memeburn",sp:{CPU:"AMD Ryzen AI 9 HX 370",GPU:"up to RTX 5090",RAM:"up to 64GB",Screen:"16-inch 4K OLED, 120Hz"},note:"Memeburn's best Windows laptop for video editing.",s:["mbVid"]},
+{b:"enthusiast",n:"MSI Creator A16 AI+",tag:"CREATOR ALTERNATIVE",price:"$2,799",pn:"Memeburn",sp:{CPU:"AMD Ryzen AI 9 HX 370",GPU:"up to RTX 5070 Ti",RAM:"up to 32GB",Screen:"16-inch QHD+ Mini-LED"},note:"Memeburn's creator-focused alternative.",s:["mbVid"]},
+{b:"enthusiast",n:"MacBook Pro 16 (M5 Pro)",tag:"BEST OVERALL (MEMEBURN)",price:"from $2,999",pn:"Memeburn",sp:{CPU:"Apple M5 Pro 18-core",GPU:"20-core",RAM:"up to 64GB",Screen:"16.2-inch Liquid Retina XDR"},note:"Ranked first in Memeburn's 2026 video-editing list.",s:["mbVid"]},
+{b:"enthusiast",n:"Razer Blade 16",tag:"VFX AND GPU-HEAVY WORK",price:"from $3,499.99",pn:"Memeburn",sp:{CPU:"Intel Core Ultra 9 386H",GPU:"up to RTX 5090",RAM:"up to 64GB LPDDR5X-9600",Screen:"16-inch QHD+ OLED, 240Hz"},note:"Memeburn's pick for VFX and GPU-heavy workflows.",s:["mbVid"],buy:"blade16"},
+{b:"enthusiast",n:"ASUS ROG Zephyrus G16",tag:"EDIT BY DAY, GAME AT NIGHT",price:"$3,699.99",pn:"Memeburn",sp:{CPU:"Intel Core Ultra 9 386H",GPU:"up to RTX 5080",RAM:"up to 32GB",Screen:"16-inch 2.5K OLED, 240Hz"},note:"Memeburn's best laptop for someone who edits and games on the same machine.",s:["mbVid"]},
+{b:"enthusiast",n:"Samsung Galaxy Book6 Ultra",tag:"BEST THIN-AND-LIGHT WINDOWS",price:"from $3,799.99",pn:"Memeburn",sp:{CPU:"Intel Core Ultra Series 3",GPU:"RTX 5060 or 5070",RAM:"32GB or 64GB LPDDR5X",Storage:"up to 2TB",Screen:"16-inch Dynamic AMOLED 2X, 120Hz"},note:"Memeburn's thin-and-light Windows pick for editing.",s:["mbVid"]},
+{b:"enthusiast",n:"Lenovo ThinkPad P1 Gen 8",tag:"BEST WORKSTATION",price:"from $4,417.56",pn:"Memeburn",sp:{CPU:"Intel Core Ultra H-series",GPU:"up to RTX PRO 2000",RAM:"up to 64GB LPDDR5X",Storage:"up to 8TB (two M.2 drives)",Screen:"16-inch, DisplayHDR"},note:"Memeburn's workstation pick for video editing.",s:["mbVid"]}
+]},
+{id:"gaming",label:"Gaming",look:"Check the exact GPU (RTX 5050 vs 5060 vs 5070) and its power limit, not just \"RTX\". Tom's Hardware says most gaming laptops under $1,500 use the RTX 5050 or 5060.",
+empty:{},
+picks:[
+{b:"entry",n:"Acer Nitro V 16 AI",tag:"BEST BUDGET",price:"$629",pn:"a low sale price PCWorld has seen; reviewed at $899",sp:{CPU:"AMD Ryzen 5 240",GPU:"RTX 5050",RAM:"16GB DDR5-5600",Storage:"512GB SSD",Screen:"16-inch 1920×1200, 180Hz",Weight:"5.38 lb",Battery:"8–12 hrs light use"},note:"PCWorld says it delivers great 1080p gaming for people who don't want to spend much. Don't pay full price for it.",s:["pcw"]},
+{b:"everyday",n:"MSI Cyborg A15",tag:"COURSEWORK PLUS GAMING",price:"$967.77",pn:"Newegg",sp:{CPU:"AMD Ryzen 7 260",GPU:"RTX 5050",Screen:"15.6-inch, 144Hz"},note:"Newegg's pick for students who want one machine for schoolwork and games.",s:["newegg"]},
+{b:"everyday",n:"MSI Katana 15 HX",tag:"BEST BUDGET (TOM'S HARDWARE)",price:"$999.99",pn:"Tom's Hardware",sp:{CPU:"Intel Core i7-14650HX",GPU:"RTX 5050",Storage:"512GB or 1TB",Screen:"15.6-inch 1080p, 144Hz",Weight:"5.95 lb"},note:"A rare gaming laptop Tom's Hardware has tested near $1,000. That price range has thinned because of component costs.",s:["thGame"]},
+{b:"performance",n:"Lenovo Legion 5 (Gen 10)",tag:"BEST VALUE",price:"from $1,300",pn:"GamesRadar lists $1,300 to $2,500",sp:{CPU:"AMD Ryzen AI 7 350 or Intel Core Ultra 255HX/275HX",GPU:"RTX 5050 to 5070",Storage:"512GB–2TB",Screen:"15-inch QHD+ OLED, 165Hz",Weight:"5.5 lb"},note:"GamesRadar's best value overall, thanks to a well-priced OLED display.",s:["gr"],buy:"legion5"},
+{b:"performance",n:"Acer Nitro V 16S AI",tag:"BEST BUDGET OVERALL",price:"about $1,500",pn:"Tom's Hardware, June 2026",sp:{CPU:"AMD Ryzen 7 260",GPU:"RTX 5060",RAM:"32GB",Storage:"1TB",Screen:"16-inch 1920×1200, 180Hz",Weight:"4.55 lb"},note:"Tom's Hardware's best budget gaming laptop overall.",s:["thBud"]},
+{b:"performance",n:"Gigabyte Aero X16",tag:"BEST FOR WORK AND PLAY",price:"about $1,500",pn:"on sale; had been $1,800",sp:{CPU:"AMD Ryzen AI 7 350",GPU:"RTX 5070",RAM:"32GB",Storage:"1TB",Screen:"16-inch 2560×1600, 165Hz",Weight:"4.2 lb",Battery:"9 hrs 13 min tested"},note:"Tom's Hardware's budget pick for someone who needs one laptop for work and play.",s:["thBud"]},
+{b:"performance",n:"Gigabyte Aorus 16X",tag:"MID-RANGE VALUE",price:"$1,599.99",pn:"as tested",sp:{CPU:"Intel Core i7-14650HX",GPU:"RTX 4070",RAM:"32GB",Storage:"1TB",Screen:"16-inch 2560×1600, 165Hz",Weight:"5.07 lb"},note:"Tom's Hardware's mid-range value pick.",s:["thGame"]},
+{b:"performance",n:"Acer Predator Helios Neo 16",tag:"BUDGET PICK",price:"from $1,799",pn:"Gentleman's Journal",sp:{GPU:"RTX 4070 (starting)"},note:"Gentleman's Journal's budget pick for a high-end 2026 gaming list. Full specs weren't published.",s:["gj"]},
+{b:"performance",n:"Alienware 16X Aurora",tag:"BEST GAMING (PCWORLD)",price:"$1,999.99",pn:"as reviewed",sp:{CPU:"Intel Core Ultra 9 275HX",GPU:"RTX 5070",RAM:"32GB DDR5",Storage:"1TB SSD",Screen:"16-inch 2560×1600, 240Hz",Weight:"5.86 lb",Battery:"just under 7 hrs"},note:"PCWorld says it handles modern games easily and looks great doing it.",s:["pcw"]},
+{b:"enthusiast",n:"ASUS ROG Zephyrus G14",tag:"BEST COMPACT",price:"$2,099",pn:"Gentleman's Journal, RTX 5080 config",sp:{CPU:"AMD Ryzen AI 9 HX 370",GPU:"RTX 5070 Ti or 5080",RAM:"up to 32GB DDR5",Storage:"1TB or 2TB",Screen:"14-inch 2880×1800 OLED, 120Hz",Weight:"3.46 lb"},note:"GamesRadar says it keeps its crown in the ultra-compact category. A 2025 model with an RTX 5060 has been seen for $1,300 to $1,400.",s:["gj","gr"]},
+{b:"enthusiast",n:"HP OMEN MAX 16",tag:"RTINGS' BEST TESTED",price:"$2,179",pn:"Gentleman's Journal, RTX 5090 config",sp:{CPU:"Intel Core Ultra 9 275HX or AMD Ryzen AI 9 HX 375",GPU:"RTX 5070 to 5090",Storage:"512GB–2TB",Screen:"16-inch 2560×1600, 240Hz",Weight:"6.1 lb"},note:"The best gaming laptop RTINGS has tested. It gives up some battery life for performance.",s:["gj","gr"]},
+{b:"enthusiast",n:"Lenovo Legion Pro 7i",tag:"HIGH-END LEGION",price:"$2,499",pn:"Gentleman's Journal; specs from GuideSpot's config",sp:{CPU:"Intel Core Ultra 9 275HX",GPU:"RTX 5070 Ti 12GB",RAM:"32GB DDR5",Storage:"1TB SSD",Screen:"16-inch 2.5K OLED, 240Hz",Weight:"5.65 lb"},note:"Named among the best 2026 gaming laptops by Gentleman's Journal, and GuideSpot's best Windows pick for editing.",s:["gj","gsVid"]},
+{b:"enthusiast",n:"Lenovo Legion Pro 9i",tag:"DESKTOP-CLASS POWER",price:"$2,999",pn:"Gentleman's Journal",sp:{CPU:"Intel Core Ultra 9",GPU:"RTX 5090"},note:"Ranked right behind the Razer Blade 16 for sheer performance. Full specs weren't published.",s:["gj"]},
+{b:"enthusiast",n:"ASUS ROG Strix Scar 18",tag:"BEST 18-INCH",price:"$3,399",pn:"Gentleman's Journal",sp:{CPU:"Intel Core Ultra 9 275HX",GPU:"RTX 5080 or 5090",RAM:"16–64GB",Storage:"2TB or 4TB",Screen:"18-inch Mini LED QHD+, 240Hz",Weight:"7.28 lb"},note:"Gentleman's Journal's pick for sheer exuberance.",s:["gj","gr"]},
+{b:"enthusiast",n:"Razer Blade 16 (2026)",tag:"BEST ALL-ROUNDER",price:"$3,499.99",pn:"Tom's Guide",sp:{CPU:"Intel Core Ultra 9 386H",GPU:"up to RTX 5090",RAM:"up to 32GB",Storage:"up to 2TB",Screen:"16-inch 2560×1600 OLED, 240Hz",Weight:"4.7 lb",Battery:"12 hrs 46 min web; 1 hr 41 min gaming"},note:"Gentleman's Journal's all-rounder to beat. Battery in games is short, as with every laptop in this class.",s:["tgBat","gj"],buy:"blade16"},
+{b:"enthusiast",n:"Razer Blade 18 (2026)",tag:"BEST OVERALL (TOM'S HARDWARE)",price:"$3,999.99",pn:"starting; tested at $5,399.99",sp:{CPU:"Intel Core Ultra 9 290HX Plus",GPU:"RTX 5090",Screen:"18-inch 3840×2400 at 240Hz or 1920×1200 at 440Hz",Weight:"7.06 lb"},note:"Tom's Hardware's top gaming laptop.",s:["thGame"]},
+{b:"enthusiast",n:"MSI Titan 18 HX",tag:"RAW PERFORMANCE",price:"$4,089",pn:"Gentleman's Journal",sp:{CPU:"Intel Core Ultra 9",GPU:"RTX 5080",Screen:"18-inch, 240Hz"},note:"Holds the crown for raw performance in Gentleman's Journal's ranking.",s:["gj"]}
+]},
+{id:"portable",label:"Travel / Ultraportable",look:"Look for tested battery hours, not the box claim, and keep the weight under 4 lb. Efficient chips beat fast ones here.",
+empty:{},
+picks:[
+{b:"entry",n:"Acer Chromebook Plus Spin 514",tag:"BEST CHROMEBOOK",price:"$312 – $339",pn:"sale pricing, Tom's Guide",sp:{CPU:"MediaTek Kompanio Ultra 910",RAM:"12GB",Storage:"256GB UFS",Screen:"14-inch 2880×1800 OLED touch",Weight:"2.9 lb",Battery:"14 hrs 53 min tested"},note:"Tom's Guide's Chromebook for battery life, with an OLED touchscreen at a very low price.",s:["tgBat"]},
+{b:"entry",n:"Lenovo IdeaPad Slim 3x",tag:"BEST BUDGET BATTERY",price:"from $449",pn:"sale pricing; up to $739.99, Tom's Guide",sp:{CPU:"Snapdragon X 8-core",RAM:"16GB",Storage:"256GB",Screen:"15.3-inch 1920×1200 touch",Weight:"3.42 lb",Battery:"16 hrs 29 min tested"},note:"Tom's Guide says the battery life outweighs a lackluster display and quiet speakers.",s:["tgBat"]},
+{b:"entry",n:"MacBook Neo",tag:"BEST BUDGET LAPTOP",price:"$599",pn:"starting price, Tom's Hardware",sp:{CPU:"Apple A18 Pro 6-core",RAM:"8GB",Storage:"256GB",Screen:"13-inch 2408×1506",Weight:"2.7 lb"},note:"Tom's Hardware's best budget laptop. Only 8GB of memory, and it can't be upgraded.",s:["thBest"],buy:"neo"},
+{b:"entry",n:"Dell XPS 13 (2026)",tag:"BEST VALUE ULTRAPORTABLE",price:"$599 – $699",pn:"$599 for students, $699 for everyone else",sp:{CPU:"Intel Core 5 320",RAM:"8GB (up to 32GB)",Storage:"512GB SSD",Screen:"13.4-inch 2.5K, 120Hz, 500 nits",Weight:"2.2 lb"},note:"Memeburn's value pick among ultraportables. Windows Central covered the price cut.",s:["wcXps","mbUp"],buy:"xps13"},
+{b:"everyday",n:"HP OmniBook 5 14",tag:"BEST OVERALL ULTRAPORTABLE",price:"from $799",pn:"OmniBook 5 series starting price, Tom's Guide",sp:{CPU:"up to Snapdragon X Plus 8-core",RAM:"up to 32GB",Storage:"up to 1TB",Screen:"14-inch 1920×1200 OLED",Weight:"1.33 kg (2.9 lb)",Battery:"16 hrs tested; HP claims up to 34"},note:"Memeburn's top ultraportable. Tom's Guide tested 16 hours, well short of the 34 hours HP advertises.",s:["tgOmni","mbUp"],buy:"omni"},
+{b:"everyday",n:"ASUS Zenbook A14 (2026)",tag:"BEST WINDOWS UNDER 1 KG",price:"$1,269",pn:"Best Buy, 16GB/512GB model",sp:{CPU:"Snapdragon X2 Elite",RAM:"16GB (32GB on ASUS config)",Storage:"512GB (1TB on ASUS config)",Screen:"14-inch 1920×1200 OLED, 60Hz",Weight:"2.18 lb",Battery:"70Wh; about 17 hrs real-world"},note:"Memeburn's best Windows ultraportable. Windows Central lists $1,999.99 for the fully specced ASUS version.",s:["wcZen","mbUp"],buy:"zen"},
+{b:"everyday",n:"MacBook Air 13 (M5)",tag:"BEST MACBOOK",price:"$1,199",pn:"Tom's Guide",sp:{CPU:"Apple M5 10-core",RAM:"16–32GB",Storage:"512GB–4TB",Screen:"13.6-inch 2560×1664",Weight:"2.7 lb",Battery:"15 hrs 37 min tested"},note:"Tom's Guide's best MacBook for battery life and Memeburn's best ultraportable Mac.",s:["tgBat","mbUp"],buy:"air"},
+{b:"performance",n:"Dell 14S (2026)",tag:"BEST FOR BATTERY LIFE (PCWORLD)",price:"$1,469",pn:"as reviewed",sp:{CPU:"Intel Core Ultra 7 355",RAM:"16GB LPDDR5x",Storage:"512GB SSD",Screen:"14-inch 1920×1200 OLED touch",Weight:"3.28 lb",Battery:"about 36 hrs video loop"},note:"PCWorld's battery-life pick. Tom's Guide measured 20 hrs 41 min in a mixed test.",s:["pcw"]},
+{b:"performance",n:"Lenovo Yoga Slim 7i Aura Edition",tag:"BEST ULTRALIGHT",price:"$1,519",pn:"as tested with 32GB",sp:{CPU:"Intel Core Ultra 7 355",RAM:"32GB",Screen:"14-inch 2880×1800 POLED touch, 120Hz",Weight:"2.15 lb",Battery:"16 hrs 38 min tested"},note:"Tom's Hardware's best ultralight laptop.",s:["thBest"]},
+{b:"performance",n:"Acer Swift 16 AI (Panther Lake)",tag:"BEST OVERALL (PCWORLD)",price:"$1,551",pn:"Best Buy, per PCWorld",sp:{CPU:"Intel Core Ultra X7 358H",RAM:"32GB LPDDR5X",Storage:"1TB Gen5 SSD",Screen:"16-inch 2880×1800 OLED touch, 120Hz",Weight:"3.42 lb",Battery:"about 18.5 hrs"},note:"A 16-inch OLED that still lasts nearly a full day and a half.",s:["pcw"]},
+{b:"performance",n:"Dell XPS 14 (2026)",tag:"BEST WINDOWS FOR BATTERY",price:"from $1,600",pn:"Tom's Hardware",sp:{CPU:"Intel Core Ultra 7 355",Screen:"14-inch 1920×1200",Weight:"3 lb",Battery:"20 hrs 41 min tested"},note:"Tom's Guide says a new chip lets it outlast its predecessor.",s:["thBest","tgBat"]},
+{b:"performance",n:"Framework Laptop 13",tag:"BEST FOR UPGRADING",price:"$1,946",pn:"as reviewed",sp:{CPU:"AMD Ryzen AI 7 350",RAM:"16GB DDR5-5600",Storage:"1TB SSD",Screen:"13.5-inch 2880×1920",Weight:"2.99 lb",Battery:"just over 11 hrs"},note:"PCWorld's pick if you want to swap parts and repair it yourself.",s:["pcw"]},
+{b:"enthusiast",n:"Lenovo ThinkPad X1 Carbon Gen 14 Aura Edition",tag:"BEST FOR WORK",price:"$2,200",pn:"as tested with 32GB",sp:{CPU:"Intel Core Ultra 7 355",RAM:"32GB",Storage:"512GB",Screen:"14-inch 2880×1800 OLED, 120Hz",Weight:"2.15 lb"},note:"Tom's Hardware's best laptop for work, and Memeburn's business ultraportable.",s:["thBest","mbUp"]},
+{b:"enthusiast",n:"MacBook Pro 16 (M5 Pro)",tag:"LONGEST TESTED BATTERY",price:"$2,799",pn:"Tom's Guide",sp:{CPU:"Apple M5 Pro 18-core",RAM:"24–64GB",Storage:"1–4TB",Screen:"16.2-inch 3456×2234, 120Hz",Weight:"4.7 lb",Battery:"21 hrs 10 min tested"},note:"The longest-lasting laptop Tom's Guide has tested, but at 4.7 lb it isn't the lightest carry.",s:["tgBat"]}
+]}
+];
+const dictionary = [
+  // RAM
+  {c:"RAM", k:["4gb ram","4 gb ram"], g:false, t:"4GB is below the working minimum for a modern OS. Expect constant slowdowns even with a browser and one app open.", r:"Avoid at any price."},
+  {c:"RAM", k:["8gb ram","8 gb ram"], g:false, t:"The entry-line minimum. Fine for browsing and documents; expect stutter with many tabs, a video call, and an app running together.", r:"Acceptable under $600. A red flag above $900."},
+  {c:"RAM", k:["16gb ram","16 gb ram"], g:true, t:"Comfortably covers everyday multitasking, schoolwork, and light creative work.", r:"The realistic target for most buyers in 2026."},
+  {c:"RAM", k:["32gb ram","32 gb ram"], g:true, t:"Headroom for video editing, virtual machines, large datasets, and heavy multitasking.", r:"Worth it only if you know why you need it."},
+  {c:"RAM", k:["soldered","non-upgradeable","lpddr","lpddr5","lpddr5x"], g:false, t:"Soldered RAM cannot be upgraded later. Whatever you buy is what the machine has for its whole life.", r:"Buy one tier more RAM than you need today."},
+  {c:"RAM", k:["ddr4"], g:false, t:"An older memory standard. Still functional, but signals an older platform being sold at current-year prices.", r:"Check the CPU generation before buying."},
+  {c:"RAM", k:["ddr5"], g:true, t:"Current memory standard with higher bandwidth. A real spec, not marketing.", r:"Expected on mid-range and above."},
+  // CPU
+  {c:"CPU", k:["celeron","pentium","intel n100","n-series","atom"], g:false, t:"Budget chips built for cost, not speed. They handle a browser and a document, and little else at once.", r:"Only for machines under about $400."},
+  {c:"CPU", k:["core i3","ryzen 3"], g:false, t:"Entry-level. Workable for light use, but it will be the bottleneck within a couple of years.", r:"Fine for a secondary laptop."},
+  {c:"CPU", k:["core i5","ryzen 5"], g:true, t:"The mainstream sweet spot. Handles nearly all schoolwork, office work, and light editing without complaint.", r:"Check the generation. A current i5 often beats an older i7."},
+  {c:"CPU", k:["core i7","ryzen 7"], g:true, t:"Capable for multitasking and moderate creative work.", r:"A 4-year-old i7 can lose to a current i5. Generation matters more than the number."},
+  {c:"CPU", k:["core i9","ryzen 9"], g:true, t:"Top-tier desktop-class power. Meaningful for rendering and compiling; wasted on browsing.", r:"In a thin laptop it will throttle and never hit its rated speed."},
+  {c:"CPU", k:["apple m1","apple m2","apple m3","apple m4","apple m5","m-series"], g:true, t:"Apple's own chips deliver strong performance per watt, which is why Mac battery figures hold up better than most.", r:"RAM is soldered. Choose carefully at purchase."},
+  {c:"CPU", k:["ghz","boost clock","turbo"], g:false, t:"A boost clock is a short burst peak, not a sustained speed. The base clock, usually 2–3GHz lower, predicts real-world performance better.", r:"The base clock is rarely printed on the box. Look it up."},
+  {c:"CPU", k:["cores","16 cores","octa-core","8 cores"], g:false, t:"Core counts mix fast performance cores with slow efficiency cores. A 16-core chip may have only 6 fast cores.", r:"Compare benchmark scores, not core counts."},
+  {c:"CPU", k:["u-series","low power","15w"], g:false, t:"A low-wattage chip tuned for battery life. Good for portability, weaker under sustained load than its name suggests.", r:"Same model name, much less performance than the H-series version."},
+  // GPU
+  {c:"GPU", k:["integrated graphics","intel iris","uhd graphics","vega graphics"], g:false, t:"Graphics built into the CPU. Fine for video, terrible for gaming or 3D work.", r:"No amount of RAM compensates for this in games."},
+  {c:"GPU", k:["nvidia mx","geforce mx"], g:false, t:"An entry GPU that carries the NVIDIA name but performs close to integrated graphics.", r:"The brand is doing the selling here, not the chip."},
+  {c:"GPU", k:["rtx 3050","rtx 4050","rtx 2050","rtx 5050"], g:false, t:"The bottom rung of the RTX line. Playable at 1080p on lower settings; not a gaming machine.", r:"Often paired with low VRAM, which limits it further."},
+  {c:"GPU", k:["rtx 4060","rtx 4070","rtx 5060","rtx 5070"], g:true, t:"Real gaming and creative performance at 1080p and 1440p.", r:"Check the wattage rating. The same GPU varies widely between laptops."},
+  {c:"GPU", k:["rtx 5070 ti","rtx 5080","rtx 5090","rtx 4080","rtx 4090"], g:true, t:"Top-end laptop graphics. These handle 1440p and 4K gaming and heavy rendering, and they draw a lot of power.", r:"Expect a thick chassis, loud fans, and a battery that lasts a couple of hours under load."},
+  {c:"GPU", k:["4gb graphics","6gb vram","4gb vram"], g:false, t:"VRAM is often advertised instead of GPU model because the number sounds large. A slow GPU with lots of VRAM is still slow.", r:"Model number first, VRAM second."},
+  {c:"GPU", k:["dedicated graphics","discrete graphics","nvidia graphics","gaming graphics"], g:false, t:"A category, not a spec. This phrase covers everything from near-useless to high-end.", r:"Find the actual model number before paying extra for it."},
+  {c:"GPU", k:["max-q","tgp","wattage"], g:false, t:"Laptop GPUs run at different power limits. A low-wattage version of a card can be 30% slower than the same card in another laptop.", r:"Look for the TGP figure in reviews; makers rarely list it."},
+  // Storage
+  {c:"Storage", k:["emmc","hard drive","hdd","5400rpm"], g:false, t:"Slow storage. This single spec makes a laptop feel dated more than any other, regardless of CPU.", r:"Avoid. An SSD is the biggest real-world upgrade available."},
+  {c:"Storage", k:["128gb"], g:false, t:"Too small once the OS and updates are installed. You'll be managing space from week one.", r:"Not viable as a primary machine."},
+  {c:"Storage", k:["256gb"], g:false, t:"Fills fast with apps, photos, and updates. Workable only if you live in the cloud.", r:"Check whether it's upgradeable before buying."},
+  {c:"Storage", k:["512gb","1tb","2tb"], g:true, t:"A comfortable amount for most users without constant space management.", r:"A solid, non-inflated spec."},
+  {c:"Storage", k:["nvme","pcie gen 4","m.2"], g:true, t:"Fast SSD interface. Real, measurable improvement over older SATA drives.", r:"Genuine spec worth having."},
+  {c:"Storage", k:["up to 1tb","up to 2tb","expandable storage"], g:false, t:"The headline figure is usually the most expensive configuration, not the one at the listed price.", r:"Confirm the number in the exact SKU you're buying."},
+  // Display
+  {c:"Display", k:["hd display","1366x768","hd+","1600x900"], g:false, t:"Below full HD. 'HD' sounds current but describes a resolution from over a decade ago.", r:"Look for 1920x1080 or higher."},
+  {c:"Display", k:["full hd","1080p","1920x1080"], g:true, t:"The practical standard for laptop screens. Sharp enough at typical sizes.", r:"Resolution isn't everything. Check brightness and color too."},
+  {c:"Display", k:["4k display","uhd display","retina"], g:false, t:"Higher resolution costs meaningful battery life and often isn't visible at 14 inches.", r:"Worth it for color work, rarely for general use."},
+  {c:"Display", k:["nits","brightness","250 nits","300 nits"], g:false, t:"Under 300 nits is hard to use near a window. Brightness is frequently omitted from listings for a reason.", r:"400+ nits for outdoor or bright-room use."},
+  {c:"Display", k:["srgb","color accurate","100% srgb","dci-p3"], g:true, t:"A real, measurable color spec. Its absence from a listing usually means the panel is weak.", r:"Essential for photo and video work."},
+  {c:"Display", k:["120hz","144hz","high refresh","165hz"], g:true, t:"Smoother motion. Real for gaming; noticeable but optional for everything else.", r:"Costs battery life. Check that it can be toggled down."},
+  {c:"Display", k:["oled"], g:true, t:"Excellent contrast and color. Better for media and creative work.", r:"Slight burn-in risk with static interfaces over years."},
+  // Battery
+  {c:"Battery", k:["up to 18 hours","up to 20 hours","all day battery","up to 15 hours","hours battery","battery life"], g:false, t:"Battery figures come from looping local video at low brightness with radios off. Real mixed use typically lands at 40–60% of the claim.", r:"Search reviews for 'real world battery' before trusting the number."},
+  {c:"Battery", k:["whr","watt-hour","mah","53whr"], g:true, t:"The actual capacity figure. Harder to spin than an hours claim. Bigger is better at a given efficiency.", r:"Compare Whr across models rather than advertised hours."},
+  {c:"Battery", k:["fast charge","rapid charge","80% in"], g:false, t:"Fast-charge claims usually describe only the first portion of the charge, which is always the quickest part.", r:"The last 20% is slow on every laptop."},
+  // Marketing language
+  {c:"Marketing", k:["military grade","military-grade","mil-std","rugged"], g:false, t:"Usually refers to MIL-STD-810, a testing standard manufacturers can self-certify against without independent verification.", r:"It does not extend your warranty or cover accidental damage."},
+  {c:"Marketing", k:["ai pc","ai-powered","neural engine","npu","copilot+"], g:false, t:"An NPU is real hardware, but most consumer software doesn't use it yet. The label is currently doing more work than the chip.", r:"Don't pay a premium for capability you can't use today."},
+  {c:"Marketing", k:["gaming laptop","gamer","rgb"], g:false, t:"A styling category, not a performance guarantee. Plenty of machines marketed as gaming laptops carry entry-level GPUs.", r:"Check the GPU model, cooling, and screen refresh rate."},
+  {c:"Marketing", k:["was $","strikethrough","% off","limited time","only 1 left","deal"], g:false, t:"Reference prices are frequently inflated to manufacture a discount, and the basis of a settled class action against HP over its own PC listings.", r:"Check the 90-day price history before believing the markdown."},
+  {c:"Marketing", k:["renewed","refurbished","open box"], g:false, t:"Quality varies enormously by who refurbished it. Manufacturer-refurbished is usually safe; third-party is a gamble.", r:"Check who warranties it and for how long."},
+  {c:"Marketing", k:["premium build","ultra-thin","sleek","lightweight design"], g:false, t:"Thinness costs cooling. Thin machines throttle sooner, meaning the advertised CPU speed is less reachable.", r:"Look for sustained-load benchmarks, not peak numbers."},
+  {c:"Marketing", k:["best seller","#1","award winning","top rated"], g:false, t:"Popularity rankings are category-specific and often reset frequently. They describe sales, not quality.", r:"Read the 3-star reviews, not the 5-star ones."},
+  // Ports and extras
+  {c:"Ports", k:["thunderbolt","usb4"], g:true, t:"Fast data, display output, and charging over one port. A useful spec.", r:"Confirm the version. Thunderbolt 4 and 3 differ."},
+  {c:"Ports", k:["usb-c","type-c"], g:false, t:"USB-C describes the plug shape, not the speed. A USB-C port can be slow, fast, or display-capable.", r:"Look for the protocol behind the port."},
+  {c:"Ports", k:["wifi 6","wifi 7","wi-fi 6e"], g:true, t:"Current wireless standards with real speed benefits. That only holds if your router supports them too.", r:"No benefit on an older router."},
+  {c:"Ports", k:["bluetooth 5"], g:true, t:"Standard and fine. Not a differentiator between machines.", r:"Ignore this in comparisons."},
+  {c:"Ports", k:["hdmi 2.1","hdmi 2.0"], g:true, t:"Lets you drive an external monitor at high resolution and refresh rate. 2.1 supports higher bandwidth than 2.0.", r:"Check the version, not just the presence of an HDMI port."},
+  {c:"Ports", k:["sd card reader","microsd","card reader"], g:true, t:"Useful for photographers and anyone offloading footage. Increasingly cut from thin laptops to save space.", r:"A real convenience if you use it, irrelevant if you don't."},
+  {c:"Ports", k:["ethernet port","rj45","lan port"], g:true, t:"A wired connection is faster and more stable than Wi-Fi. Often dropped from thin-and-light models.", r:"Matters more for gaming or unreliable Wi-Fi than for general use."},
+  {c:"Ports", k:["headphone jack","3.5mm jack"], g:true, t:"Still standard on almost all laptops. Its absence is rare enough to be worth noting.", r:"Not a selling point, just check it's there if you use wired audio."},
+  // Warranty
+  {c:"Warranty", k:["warranty","1 year limited","protection plan"], g:false, t:"Standard coverage is one year and excludes drops and spills. Extended plans are high-margin products for the retailer.", r:"Check whether your credit card already extends warranties."},
+  {c:"Warranty", k:["onsite service","onsite repair"], g:true, t:"A technician comes to you instead of you shipping the laptop out for weeks. A useful warranty upgrade.", r:"Worth it mainly if you can't be without the machine."},
+  {c:"Warranty", k:["depot repair","mail-in service"], g:false, t:"You ship the laptop to a repair center and wait, sometimes 1–3 weeks, for it to come back.", r:"The default on most base warranties. Budget the downtime."},
+  {c:"Warranty", k:["accidental damage protection","adp"], g:false, t:"Covers drops and spills that standard warranties exclude, but is priced as a separate add-on, often $100+.", r:"Compare against your renters or credit-card coverage before buying it."},
+  // CPU generation naming
+  {c:"CPU", k:["12th gen","13th gen"], g:false, t:"An older Intel generation still sold new at a discount. Not broken, just behind current efficiency and performance.", r:"Fine at a lower price; overpriced at current-gen money."},
+  {c:"CPU", k:["14th gen","core ultra","meteor lake","lunar lake"], g:true, t:"Intel's current generation, with a built-in NPU and better efficiency than prior chips.", r:"The 'Ultra' name doesn't guarantee a fast chip. Check the specific model."},
+  {c:"CPU", k:["ryzen ai","ryzen 8000","ryzen 9000"], g:true, t:"AMD's current generation with an integrated NPU, competitive with Intel's latest at similar price points.", r:"Compare the specific model number, not just the family name."},
+  {c:"CPU", k:["snapdragon x","snapdragon x2","arm laptop","arm chip"], g:false, t:"ARM-based Windows laptops offer strong battery life but some older software and games still run through emulation, which is slower.", r:"Check app compatibility for what you actually use before buying."},
+  // RAM extras
+  {c:"RAM", k:["unified memory"], g:false, t:"Apple's term for RAM shared between CPU and GPU. It functions like RAM but can't be upgraded and is priced steeply per tier.", r:"Buy more than you think you need. There's no adding it later."},
+  {c:"RAM", k:["dual channel"], g:true, t:"Two memory sticks running together roughly double bandwidth versus one stick of the same total size.", r:"A single stick of 16GB is often slower in practice than two 8GB sticks."},
+  {c:"RAM", k:["single channel"], g:false, t:"One memory stick installed where two would run faster. Common in budget configurations to cut cost.", r:"Ask if a dual-channel upgrade is available at purchase."},
+  // GPU extras
+  {c:"GPU", k:["intel arc graphics","arc gpu"], g:false, t:"Intel's discrete graphics line. Improving with driver updates but still behind equivalent NVIDIA and AMD cards in most games.", r:"Check recent benchmarks for the specific game or app you need it for."},
+  {c:"GPU", k:["radeon 780m","radeon 880m","integrated radeon"], g:false, t:"AMD's strongest integrated graphics, better than Intel's integrated options, but still not a substitute for a discrete GPU.", r:"Fine for light gaming at low settings, not for serious use."},
+  // Storage extras
+  {c:"Storage", k:["sata ssd","sata iii"], g:false, t:"An older, slower SSD interface than NVMe. Still far faster than a hard drive, but a step behind current drives.", r:"Not a red flag on its own, just check it isn't priced like NVMe."},
+  {c:"Storage", k:["single m.2 slot","no expansion slot","soldered storage"], g:false, t:"Storage that can't be added to later, either because there's no spare slot or the drive is soldered to the board.", r:"Buy the capacity you'll need in two years, not just today."},
+  // Display extras
+  {c:"Display", k:["matte finish","anti-glare"], g:true, t:"Reduces reflections in bright rooms or outdoors, at a very slight cost to color vibrancy.", r:"Good default for anyone working near windows or outside."},
+  {c:"Display", k:["glossy display"], g:false, t:"More vibrant colors but noticeably more reflective, which can be a real problem in bright light.", r:"Fine for a dim room, frustrating outdoors."},
+  {c:"Display", k:["touchscreen"], g:false, t:"Convenient for a 2-in-1, but adds cost, weight, and a small battery drain if you won't use it.", r:"Worth it only if the laptop folds or detaches into tablet mode."},
+  {c:"Display", k:["ips panel","ips"], g:true, t:"Wide viewing angles and consistent color, the current standard for laptop panels worth having.", r:"Confirm it's IPS and not the cheaper TN alternative below."},
+  {c:"Display", k:["tn panel"], g:false, t:"An older, cheaper panel type with narrow viewing angles and washed-out color from an angle.", r:"Increasingly rare, but still shows up in the cheapest models."},
+  // Chassis, size and weight
+  {c:"Build", k:["plastic chassis","plastic build"], g:false, t:"Lighter on cost, not necessarily fragile, but flexes more and feels less premium than metal.", r:"Not disqualifying at a budget price point. Check hinge quality instead."},
+  {c:"Build", k:["aluminum chassis","aluminium unibody","cnc aluminum"], g:true, t:"Stiffer and more durable than plastic, and usually dissipates heat slightly better.", r:"A build-quality upgrade, common above the entry tier."},
+  {c:"Build", k:["magnesium alloy"], g:true, t:"Lighter than aluminum at similar strength, and common in premium ultraportables.", r:"A real material upgrade, though also a signal of a higher price bracket."},
+  {c:"Build", k:["carbon fiber"], g:true, t:"Very light and strong, typically reserved for high-end business ultraportables.", r:"Expect to pay a real premium for this material."},
+  {c:"Build", k:["fan noise","loud fans","thermal throttling"], g:false, t:"Thin, light laptops with powerful chips often can't cool them quietly under load, so they either throttle down or get loud.", r:"Look for sustained-load noise and temperature tests in reviews, not the spec sheet."},
+  {c:"Build", k:["vapor chamber cooling"], g:true, t:"A more effective cooling method than standard heat pipes, letting a chip sustain higher performance longer.", r:"Common on higher-end gaming and creator laptops."},
+  {c:"Build", k:["2-in-1","convertible laptop"], g:false, t:"A folding hinge that becomes a tablet. Convenient for note-taking, but usually means a lower-power chip and shorter battery life for the size.", r:"Buy this for the form factor, not for extra performance."},
+  {c:"Build", k:["detachable"], g:false, t:"A tablet with a keyboard that disconnects entirely. Typically the least powerful option in a given price range.", r:"Fine for note-taking and browsing, weak for real multitasking."},
+  {c:"Build", k:["13 inch","14 inch"], g:false, t:"Compact and portable, but a smaller chassis usually means less room for cooling and battery.", r:"Check sustained performance benchmarks, which suffer more on small chassis."},
+  {c:"Build", k:["15.6 inch"], g:false, t:"The most common size, and typically the best-cooled and best-value option in a given lineup.", r:"Usually where a brand's price-to-performance is strongest."},
+  {c:"Build", k:["17 inch"], g:false, t:"More room for cooling and a bigger battery, at the cost of portability.", r:"Good for a desktop replacement, poor for carrying daily."},
+  // Webcam and security
+  {c:"Webcam", k:["720p webcam"], g:false, t:"A low-resolution webcam that looks noticeably worse than a phone camera on video calls.", r:"Common even on otherwise capable laptops. Check before assuming it's decent."},
+  {c:"Webcam", k:["1080p webcam","fhd webcam"], g:true, t:"A sharper picture for video calls than the older 720p standard.", r:"Increasingly common, but still worth confirming."},
+  {c:"Webcam", k:["privacy shutter"], g:true, t:"A physical slider that blocks the camera. A small, real security feature, not marketing fluff.", r:"A nice-to-have, not a reason alone to pick one laptop over another."},
+  {c:"Security", k:["windows hello","ir camera","facial recognition login"], g:true, t:"Fast, secure login using face or fingerprint instead of typing a password each time.", r:"Confirm which method (face or fingerprint) is actually included."},
+  {c:"Security", k:["fingerprint reader"], g:true, t:"A real convenience and security upgrade over a password alone.", r:"Check it's a physical sensor, not just software promising future support."},
+  {c:"Security", k:["tpm 2.0"], g:true, t:"A security chip required for Windows 11 and used for hardware-level encryption. Standard on current laptops, but worth confirming on older stock.", r:"Necessary, not a premium feature. Its presence shouldn't raise the price."},
+  {c:"Security", k:["kensington lock slot"], g:true, t:"A physical anchor point for a cable lock. Minor, but useful in shared spaces like a library or office.", r:"A small, honest spec with no marketing spin attached."},
+  // Keyboard and trackpad
+  {c:"Keyboard", k:["backlit keyboard"], g:true, t:"A real, low-cost usability feature for typing in dim rooms. Its absence on a mid-range laptop is a real cut.", r:"Check if backlighting is single-color or per-key RGB, which affects price."},
+  {c:"Keyboard", k:["numpad","number pad"], g:false, t:"Useful for spreadsheet-heavy work, but usually forces a narrower, off-center main keyboard on 15-inch laptops.", r:"A trade-off, not a pure upgrade. Try the layout before deciding it's worth it."},
+  {c:"Keyboard", k:["1.5mm travel","shallow key travel","short travel keyboard"], g:false, t:"Very short key travel is a side effect of thin chassis design and often feels mushy or unsatisfying to type on for long sessions.", r:"Type on it in person if you write or code for hours at a time."},
+  {c:"Keyboard", k:["precision touchpad","glass trackpad"], g:true, t:"Smoother tracking and more reliable multi-touch gestures than older plastic touchpads with generic drivers.", r:"A real difference in daily use that's easy to overlook on a spec sheet."},
+  // Audio
+  {c:"Audio", k:["stereo speakers"], g:false, t:"The baseline. Says nothing about loudness, clarity, or bass. A laptop can have 'stereo speakers' and still sound thin.", r:"Read a review's audio impressions rather than trusting the spec alone."},
+  {c:"Audio", k:["quad speakers","four speakers"], g:true, t:"More drivers generally means fuller sound and real stereo separation compared to two small down-firing speakers.", r:"Still worth checking listening impressions in reviews."},
+  {c:"Audio", k:["dolby atmos"], g:false, t:"A software audio processing license, not a hardware guarantee. It can make small speakers sound better or barely change anything.", r:"Judge by listening, not by the badge."},
+  {c:"Audio", k:["downward-firing speakers"], g:false, t:"Speakers that fire into the desk or your lap instead of toward you, which usually means muffled sound on soft surfaces.", r:"A minor negative worth knowing, not a dealbreaker."},
+  // Software and OS
+  {c:"Software", k:["bloatware","trial software","mcafee trial","antivirus trial","free trial"], g:false, t:"Preinstalled trial apps that nag for a subscription after 30 days. They add no real value and often slow down a fresh laptop.", r:"Budget 30–60 minutes to uninstall them after setup."},
+  {c:"Software", k:["office 365 trial","microsoft 365 trial"], g:false, t:"A time-limited trial, not a included license. The subscription cost isn't reflected in the laptop's price.", r:"Check if you already have access through school or work before valuing this."},
+  {c:"OS", k:["windows 11 home"], g:false, t:"The consumer edition of Windows. Lacks some IT-management and BitLocker device encryption features found in Pro.", r:"Fine for personal use; check Pro if you need domain join or advanced encryption."},
+  {c:"OS", k:["windows 11 pro"], g:true, t:"Adds BitLocker, remote desktop hosting, and domain/Entra join over the Home edition.", r:"Worth the upgrade mainly for work, school-managed, or security-conscious use."},
+  {c:"OS", k:["s mode","windows 11 s mode"], g:false, t:"A locked-down mode that only allows apps from the Microsoft Store, which most desktop software isn't in.", r:"Free to switch out of S Mode, but confirm it isn't the permanent OS."},
+  {c:"OS", k:["chromeos","chromebook"], g:false, t:"Lightweight and secure for browser-based work, but can't run most Windows or Mac desktop software.", r:"Great for browsing and docs; check specific app support before buying for anything else."},
+  {c:"OS", k:["freedos","no os","no operating system"], g:false, t:"Cheaper because no Windows license is included. You'll need to buy and install one yourself, or bring your own.", r:"Factor the ~$120+ Windows license into the real price."},
+  // Certifications
+  {c:"Certifications", k:["energy star"], g:true, t:"An efficiency certification that's a mild positive for power draw, but not a meaningful performance or quality signal.", r:"A nice footnote, not a reason to choose one laptop over another."},
+  {c:"Certifications", k:["epeat"], g:true, t:"An environmental and repairability rating. Useful context, especially for institutional buyers, but not a performance indicator.", r:"Check the specific tier (Bronze/Silver/Gold) rather than just the badge."},
+  {c:"Certifications", k:["carbon neutral","eco-friendly packaging"], g:false, t:"Usually refers to offsets purchased by the manufacturer, not the laptop's own energy efficiency or materials.", r:"Doesn't affect the machine's performance or durability."}
+];
+/* ===== shared engine: search, spec matching, helpers ===== */
+const TOP_URL="top-laptops.html";
+const DECODER_URL="decoder.html";
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function toks(s){return String(s).toLowerCase().replace(/[–—]/g," ").split(/[^a-z0-9.+%#]+/).map(t=>t.replace(/^\.+|\.+$/g,"")).filter(Boolean);}
+function lev(a,b,max){
+  if(Math.abs(a.length-b.length)>max)return max+1;
+  let prev=Array.from({length:b.length+1},(_,i)=>i);
+  for(let i=1;i<=a.length;i++){
+    const cur=[i];let best=i;
+    for(let j=1;j<=b.length;j++){
+      cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+      if(cur[j]<best)best=cur[j];
+    }
+    if(best>max)return max+1;
+    prev=cur;
+  }
+  return prev[b.length];
+}
+/* Pre-tokenize the dictionary once */
+const DICT=dictionary.map((d,i)=>({d,i,keys:d.k.map(k=>{const t=toks(k);return {t,p:" "+t.join(" ")+" "};})}));
+
+/* Score one entry against a query. Higher is better; 0 means no match. */
+function scoreEntry(e,qt,qp){
+  let best=0;
+  for(const k of e.keys){
+    let s=0;
+    if(qp===k.p)s=100;
+    else if(qp.includes(k.p))s=80+k.t.length;
+    else if(k.p.includes(qp))s=60;
+    else{
+      // prefix on the last typed word, earlier words must match whole words
+      const last=qt[qt.length-1],head=qt.slice(0,-1);
+      if(last.length>=2&&head.every(w=>k.t.includes(w))&&k.t.some(w=>w.startsWith(last)&&!head.includes(w)))s=45;
+      else if(qt.every(w=>k.t.includes(w)))s=40;
+      else if(qt.every(w=>w.length>=4&&k.t.some(x=>x.length>=4&&lev(w,x,w.length>=8?2:1)<=(w.length>=8?2:1))))s=25;
+    }
+    if(s>best)best=s;
+  }
+  return best;
+}
+function searchDict(q,limit){
+  const qt=toks(q);if(!qt.length)return [];
+  const qp=" "+qt.join(" ")+" ";
+  const hits=DICT.map(e=>({e,s:scoreEntry(e,qt,qp)})).filter(x=>x.s>0);
+  hits.sort((a,b)=>b.s-a.s||a.e.i-b.e.i);
+  return (limit?hits.slice(0,limit):hits);
+}
+
+/* Does a spec cell (label + value) mention this dictionary entry? All words of some key must appear in the cell. */
+function cellTokens(label,value){return new Set(toks(label+" "+value));}
+function cellHas(entry,ct){return entry.keys.some(k=>k.t.length&&k.t.every(w=>ct.has(w)));}
+function cellBest(ct){
+  let best=null,bl=0;
+  for(const e of DICT){
+    for(const k of e.keys){
+      if(k.t.length&&k.t.every(w=>ct.has(w))&&k.t.length>bl){best=e;bl=k.t.length;}
+    }
+  }
+  return best;
+}
+/* Laptops in our list whose specs mention this entry */
+function laptopsWith(entry){
+  const seen=new Set(),out=[];
+  categories.forEach(c=>c.picks.forEach(p=>{
+    if(seen.has(p.n))return;
+    if(Object.entries(p.sp).some(([k,v])=>cellHas(entry,cellTokens(k,v)))){seen.add(p.n);out.push(p.n);}
+  }));
+  return out;
+}
+
+const tabsEl=document.getElementById("cat-tabs"),panelsEl=document.getElementById("cat-panels"),pillsEl=document.getElementById("price-pills");
+let activeCat=categories[0].id,activePrice="all";
+
+categories.forEach(c=>c.picks.forEach((p,i)=>{p._id=c.id+"-"+i;}));
+const PICKS={};categories.forEach(c=>c.picks.forEach(p=>{PICKS[p._id]=p;}));
+const PROPER={"ai":"AI","it":"IT","msi":"MSI","vfx":"VFX","gpu":"GPU","pcworld":"PCWorld","memeburn":"Memeburn","macbook":"MacBook","mac":"Mac","pro":"Pro","windows":"Windows","chromebook":"Chromebook","lenovo":"Lenovo","legion":"Legion","rtings'":"RTINGS'","tom's":"Tom's","hardware":"Hardware","kg":"kg","dev":"dev"};
+function sentenceTag(t){
+  const out=t.toLowerCase().replace(/[a-z0-9']+/g,w=>PROPER[w]||w);
+  return out.charAt(0).toUpperCase()+out.slice(1);
+}
+function stagger(){
+  document.querySelectorAll(".tab-panel.active .bracket:not(.hide) .card").forEach((el,i)=>{
+    el.style.setProperty("--i",Math.min(i,10));el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");
+  });
+}
+function srcLinks(p){return p.s.map(k=>'<a href="'+U[k][1]+'" target="_blank" rel="noopener">'+esc(U[k][0])+'</a>').join(", ");}
+function brLabel(p){const b=BR.find(x=>x.id===p.b);return b?b.label+" ("+b.range+")":"";}
+function specCell(k,v){
+  const e=cellBest(cellTokens(k,v));
+  if(!e)return "<dd>"+esc(v)+"</dd>";
+  return '<dd><button type="button" class="spec-btn" data-e="'+e.i+'" aria-expanded="false" title="What does this mean?">'+esc(v)+'</button></dd>';
+}
+function cardHTML(p){
+  const buy=buyFor(p);
+  const specs=Object.entries(p.sp).map(([k,v])=>"<dt>"+esc(k)+"</dt>"+specCell(k,v)).join("");
+  return '<div class="card"><div class="cardtop"><span class="tag">'+esc(sentenceTag(p.tag))+'</span>'
+   +'<label class="cmp-pick"><input type="checkbox" data-cmp="'+p._id+'"> Compare</label></div>'
+   +'<h3>'+esc(p.n)+'</h3>'
+   +'<div class="price">'+esc(p.price)+'<small>'+esc(p.pn)+'</small></div>'
+   +'<dl class="specs">'+specs+'</dl><div class="def" hidden></div>'
+   +'<a class="btn" href="'+esc(buy.url)+'" target="_blank" rel="noopener">'+esc(buy.label)+'</a>'
+   +'<div class="fine"><p>'+esc(p.note)+'</p><p class="src">Price and specs: '+srcLinks(p)+'</p></div></div>';
+}
+function build(){
+  tabsEl.innerHTML="";panelsEl.innerHTML="";pillsEl.innerHTML="";
+  categories.forEach(cat=>{
+    const btn=document.createElement("button");btn.className="tab-btn";btn.setAttribute("role","tab");
+    btn.setAttribute("aria-selected",cat.id===activeCat?"true":"false");
+    btn.innerHTML=esc(cat.label)+'<span class="n">'+cat.picks.length+'</span>';
+    btn.onclick=()=>{activeCat=cat.id;refresh();};tabsEl.appendChild(btn);
+    const p=document.createElement("div");p.className="tab-panel"+(cat.id===activeCat?" active":"");p.id="panel-"+cat.id;
+    let html='<div class="look"><b>What to look for</b>'+esc(cat.look)+'</div>';
+    BR.forEach(br=>{
+      const items=cat.picks.filter(x=>x.b===br.id);
+      if(br.id==="varies"&&!items.length)return;
+      html+='<div class="bracket" data-b="'+br.id+'"><div class="bhead"><h2>'+esc(br.label)+'</h2><span class="range">'+esc(br.range)+'</span><span class="cnt">'+items.length+(items.length===1?" pick":" picks")+'</span></div>';
+      if(items.length){html+='<div class="grid">'+items.map(cardHTML).join("")+'</div>';}
+      else{html+='<div class="empty">'+esc((cat.empty&&cat.empty[br.id])||"No reviewer we found recommends a laptop for this use at this price point.")+'</div>';}
+      html+='</div>';
+    });
+    p.innerHTML=html;panelsEl.appendChild(p);
+  });
+  [{id:"all",label:"All price points"}].concat(BR.filter(b=>b.id!=="varies").map(b=>({id:b.id,label:b.label+", "+b.range.charAt(0).toLowerCase()+b.range.slice(1)}))).forEach(x=>{
+    const b=document.createElement("button");b.className="pill";b.textContent=x.label;
+    b.setAttribute("aria-pressed",x.id===activePrice?"true":"false");
+    b.onclick=()=>{activePrice=x.id;refresh();};pillsEl.appendChild(b);
+  });
+  applyPrice();
+}
+function applyPrice(){
+  document.querySelectorAll(".bracket").forEach(el=>{
+    el.classList.toggle("hide",activePrice!=="all"&&el.getAttribute("data-b")!==activePrice);
+  });
+}
+function refresh(){
+  [...tabsEl.children].forEach((b,i)=>b.setAttribute("aria-selected",categories[i].id===activeCat?"true":"false"));
+  categories.forEach(c=>document.getElementById("panel-"+c.id).classList.toggle("active",c.id===activeCat));
+  [...pillsEl.children].forEach((b,i)=>{const ids=["all"].concat(BR.filter(x=>x.id!=="varies").map(x=>x.id));b.setAttribute("aria-pressed",ids[i]===activePrice?"true":"false");});
+  applyPrice();
+  stagger();
+}
+build();stagger();
+
+/* ---- tap a spec to see what it means ---- */
+panelsEl.addEventListener("click",(e)=>{
+  const btn=e.target.closest(".spec-btn");if(!btn)return;
+  const card=btn.closest(".card"),box=card.querySelector(".def"),idx=+btn.getAttribute("data-e");
+  const wasOpen=btn.getAttribute("aria-expanded")==="true";
+  card.querySelectorAll(".spec-btn").forEach(b=>b.setAttribute("aria-expanded","false"));
+  if(wasOpen){box.hidden=true;box.innerHTML="";return;}
+  btn.setAttribute("aria-expanded","true");
+  const d=DICT[idx].d;
+  box.className="def "+(d.g?"good":"warn");
+  box.innerHTML='<b>'+(d.g?"✓ Solid spec":"! Read carefully")+'</b><p>'+d.t+'</p><p class="real">'+d.r+'</p><a href="'+DECODER_URL+'" target="_blank" rel="noopener">More in the decoder</a>';
+  box.hidden=false;
+});
+
+/* ---- compare ---- */
+const CMP=[];const MAXC=3;
+const barEl=document.getElementById("cmp-bar"),barMsg=document.getElementById("cmp-msg"),cmpGo=document.getElementById("cmp-go"),cmpClear=document.getElementById("cmp-clear");
+const panelEl=document.getElementById("cmp-panel"),cmpBody=document.getElementById("cmp-body"),cmpClose=document.getElementById("cmp-close");
+function syncBoxes(){
+  document.querySelectorAll("input[data-cmp]").forEach(cb=>{cb.checked=CMP.includes(cb.getAttribute("data-cmp"));});
+  const n=CMP.length;
+  barEl.hidden=n===0;document.body.classList.toggle("has-bar",n>0);
+  barMsg.textContent=n+" of "+MAXC+" selected"+(n<2?". Pick at least one more to compare.":"");
+  cmpGo.disabled=n<2;
+}
+panelsEl.addEventListener("change",(e)=>{
+  const cb=e.target.closest("input[data-cmp]");if(!cb)return;
+  const id=cb.getAttribute("data-cmp"),at=CMP.indexOf(id);
+  if(cb.checked&&at<0){
+    if(CMP.length>=MAXC){cb.checked=false;barMsg.textContent="You can compare up to "+MAXC+" laptops. Remove one first.";return;}
+    CMP.push(id);
+  }else if(!cb.checked&&at>=0){CMP.splice(at,1);}
+  syncBoxes();
+});
+cmpClear.addEventListener("click",()=>{CMP.length=0;syncBoxes();});
+const SPEC_ORDER=["CPU","GPU","RAM","Storage","Screen","Weight","Battery"];
+function renderCompare(){
+  const ps=CMP.map(id=>PICKS[id]);
+  const keys=[];SPEC_ORDER.forEach(k=>{if(ps.some(p=>p.sp[k]))keys.push(k);});
+  ps.forEach(p=>Object.keys(p.sp).forEach(k=>{if(!keys.includes(k))keys.push(k);}));
+  const cell=(f)=>ps.map(p=>"<td>"+f(p)+"</td>").join("");
+  let h='<table class="cmp-table"><thead><tr><th scope="col"></th>'+ps.map(p=>'<th scope="col">'+esc(p.n)+'<br><button type="button" class="cmp-rm" data-rm="'+p._id+'">Remove</button></th>').join("")+'</tr></thead><tbody>';
+  h+='<tr><th scope="row">Best for</th>'+cell(p=>esc(sentenceTag(p.tag)))+'</tr>';
+  h+='<tr><th scope="row">Price</th>'+cell(p=>'<b class="cmp-price">'+esc(p.price)+'</b><small>'+esc(p.pn)+'</small>')+'</tr>';
+  h+='<tr><th scope="row">Price point</th>'+cell(p=>esc(brLabel(p)))+'</tr>';
+  keys.forEach(k=>{h+='<tr><th scope="row">'+esc(k)+'</th>'+cell(p=>p.sp[k]?esc(p.sp[k]):'<span class="na">Not listed</span>')+'</tr>';});
+  h+='<tr><th scope="row">Buy</th>'+cell(p=>{const b=buyFor(p);return '<a class="btn" href="'+esc(b.url)+'" target="_blank" rel="noopener">'+esc(b.label)+'</a>';})+'</tr>';
+  h+='<tr><th scope="row">Sources</th>'+cell(p=>'<span class="cmp-src">'+srcLinks(p)+'</span>')+'</tr>';
+  cmpBody.innerHTML=h+'</tbody></table>';
+}
+let lastFocus=null;
+function openCompare(){if(CMP.length<2)return;lastFocus=document.activeElement;renderCompare();panelEl.hidden=false;document.body.classList.add("no-scroll");cmpClose.focus();}
+function closeCompare(){panelEl.hidden=true;document.body.classList.remove("no-scroll");if(lastFocus)lastFocus.focus();}
+cmpGo.addEventListener("click",openCompare);
+cmpClose.addEventListener("click",closeCompare);
+document.addEventListener("keydown",(e)=>{if(e.key==="Escape"&&!panelEl.hidden)closeCompare();});
+cmpBody.addEventListener("click",(e)=>{
+  const rm=e.target.closest("[data-rm]");if(!rm)return;
+  const at=CMP.indexOf(rm.getAttribute("data-rm"));if(at>=0)CMP.splice(at,1);
+  syncBoxes();if(CMP.length<2){closeCompare();}else{renderCompare();}
+});
+syncBoxes();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*55)+'ms';io.observe(el);});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+ "name": "SyraTHS",
+ "short_name": "SyraTHS",
+ "start_url": "./",
+ "display": "browser",
+ "background_color": "#0a0b0d",
+ "theme_color": "#0a0b0d",
+ "icons": [
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}

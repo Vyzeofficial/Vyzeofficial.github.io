@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyraTHS | My laptops</title>
+<meta name="description" content="Sign in with Google to keep a private list of your own laptops and their specs.">
+<meta name="theme-color" content="#0a0b0d">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SyraTHS">
+<meta property="og:title" content="SyraTHS | My laptops">
+<meta property="og:description" content="Sign in with Google to keep a private list of your own laptops and their specs.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://vyzeofficial.github.io/my-laptops.html">
+<meta property="og:url" content="https://vyzeofficial.github.io/my-laptops.html">
+<meta property="og:image" content="https://vyzeofficial.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#aeb7c3;
+--line:#272c34;--green:#3fb986;--accent:#6ab0e0;--accent-dim:#11283b;--green-dim:#12331f;--red:#e0535f;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--accent);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--accent);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1 em{font-style:normal;color:var(--accent);}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--accent);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+.rise{opacity:0;transform:translateY(10px);}
+.rise.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise,.seq{opacity:1!important;transform:none!important;}}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:19ch;}
+body{overflow-wrap:break-word;}
+.specs dd{overflow-wrap:anywhere;}
+nav .links a{padding:8px 0;}button.btn{border:0;cursor:pointer;font-family:var(--display);}
+
+.acct{padding:40px 0;}
+.acct h2{font-size:1.2rem;margin:0 0 8px;}
+.acct-note,.acct-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;max-width:640px;}
+.acct-note p,.acct-card p{margin:0 0 12px;color:var(--muted);}
+.acct-card .btn{margin:6px 0 10px;}
+.acct-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:640px;margin:0 0 18px;color:var(--muted);}
+.acct-bar strong{color:var(--ink);font-weight:600;overflow-wrap:anywhere;}
+.linkbtn{background:none;border:0;color:var(--accent);font-family:var(--body);font-size:0.9rem;text-decoration:underline;cursor:pointer;padding:8px 4px;}
+.acct-h{margin:38px 0 14px;}
+.lap-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;max-width:640px;}
+.lap{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;}
+.lap h3{margin:0 0 10px;font-size:1.05rem;overflow-wrap:anywhere;}
+.lap dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:0.92rem;}
+.lap dt{color:var(--muted);}
+.lap dd{margin:0;overflow-wrap:anywhere;}
+.lap .note{margin:10px 0 0;color:var(--muted);font-size:0.9rem;overflow-wrap:anywhere;}
+.lap-act{display:flex;gap:6px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.lap-act .btn{padding:9px 18px;font-size:0.84rem;}
+.btn.danger{background:var(--red);color:#fff;}
+.btn.quiet{background:var(--red-dim);color:var(--ink);}
+@media (max-width:640px){.lap dl{grid-template-columns:1fr;gap:0;}.lap dt{margin-top:6px;}}
+
+.legal{max-width:70ch;}
+.legal h2{font-size:1.2rem;margin:34px 0 8px;}
+.legal p,.legal li{color:var(--ink);margin:0 0 12px;}
+.legal ul{padding-left:20px;margin:0 0 12px;}
+.legal .upd{color:var(--muted);font-size:0.88rem;}
+.legal-links{margin-top:10px;}
+
+/* shared polish: button space, readable small text, placeholders, field errors */
+.btn{padding:12px 26px;border-radius:7px;}
+button.btn:focus-visible,a.btn:focus-visible,.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+::placeholder{color:#7f8995;opacity:1;}
+.fine{font-size:0.78rem;}
+.fine .src,.price small,.cmp-table small,.cmp-rm,.tab-btn .n,.cmp-src{font-size:0.76rem;}
+.case .src{font-size:0.82rem;}
+.ferr{color:var(--red);font-size:0.82rem;margin:-10px 0 14px;min-height:0;}
+.ferr:empty{display:none;}
+.rform input[aria-invalid="true"],.rform textarea[aria-invalid="true"]{border-color:var(--red);}
+#rep-status.ok{color:var(--green);}
+#rep-status.bad{color:var(--red);}
+.rform .opt{color:var(--muted);font-weight:400;}
+.priv{font-size:0.8rem;color:var(--muted);margin:14px 0 0;max-width:62ch;}
+.rform{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;max-width:640px;}
+.rform label{display:block;font-size:0.85rem;color:var(--muted);margin:0 0 6px;}
+.rform input,.rform textarea{width:100%;padding:12px 14px;border-radius:7px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;margin:0 0 16px;}
+.rform textarea{resize:vertical;min-height:110px;}
+.rform input:focus,.rform textarea:focus{outline:none;border-color:var(--accent);}
+.rform-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.rform .btn[disabled]{opacity:.5;cursor:not-allowed;}
+#rep-status{font-size:0.88rem;color:var(--muted);}
+#rep-status.ok{color:var(--green);}
+#rep-status.bad{color:var(--red);}
+@media (max-width:640px){.rform{padding:16px;}}
+
+/* "Was this right?" feedback */
+.fb{margin:26px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);}
+.fb-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.fb-q{font-family:var(--display);font-weight:600;margin-right:4px;}
+.fb-b{font-family:var(--body);font-size:0.9rem;padding:6px 16px;border-radius:7px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:border-color .15s,color .15s;}
+.fb-b:hover,.fb-b[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);}
+.fb-b:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.fb-b[disabled]{opacity:.55;cursor:default;}
+.fb-form{margin-top:12px;display:grid;gap:8px;}
+.fb-form[hidden]{display:none;}
+.fb-form label{font-size:0.88rem;color:var(--muted);}
+.fb-opt{font-size:0.78rem;opacity:.8;}
+.fb-form textarea{width:100%;resize:vertical;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--body);font-size:0.92rem;}
+.fb-form textarea:focus{outline:none;border-color:var(--accent);}
+.fb-chk{display:flex;gap:8px;align-items:flex-start;}
+.fb-chk input{margin-top:4px;accent-color:var(--accent);}
+.fb-acts{display:flex;gap:12px;align-items:center;}
+.fb .linkbtn{background:none;border:0;padding:4px 2px;font-family:var(--body);font-size:0.9rem;color:var(--accent);text-decoration:underline;cursor:pointer;}
+.fb-msg{margin:8px 0 0;font-size:0.88rem;color:var(--muted);min-height:0;}
+.fb-msg:empty{display:none;}
+.fb-msg.ok{color:var(--green);}
+.fb-msg.bad{color:var(--red);}
+
+@media (max-width:640px){
+.wrap{padding:0 16px;}
+nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;gap:0 14px;}
+nav .links{width:100%;flex-wrap:wrap;gap:0 18px;font-size:0.9rem;}
+header.top{padding:34px 0 26px;}
+section{padding:32px 0;}
+.decoder{padding:16px;}
+.grid{grid-template-columns:1fr;}
+.bhead .cnt{margin-left:0;}
+.self{padding:16px;}
+.btn{padding:12px 16px;}
+.tab-btn{padding:10px 12px;}
+.pill,.chip{padding:8px 12px;}
+.case{padding:16px;}
+.flags{padding:6px 16px;}
+.step{padding:16px;}
+.fine a,.case .src a{display:inline-block;padding:8px 2px;}
+.btn,.pill,.chip,.tab-btn,.drop-toggle{min-height:40px;}
+}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="index.html">Syra<b>THS</b></a>
+<div class="links"><a class="" href="index.html">Home</a><a class="" href="decoder.html">Decoder</a><a class="" href="checker.html">Checker</a><a class="" href="can-it-run.html">Can it run?</a><a class="" href="top-laptops.html">Top laptops</a><a class="" href="evidence.html">Evidence</a><a class="on" href="my-laptops.html">My laptops</a></div>
+</div></nav>
+<div class="wrap">
+<header class="top">
+  <h1 class="rise">My laptops</h1>
+  <p class="lede rise">Sign in with Google to keep a private list of your own laptops and their specs. Only you can see it, and you can change or delete an entry at any time.</p>
+</header>
+
+<section class="acct">
+  <div id="st-load" class="acct-note">Loading...</div>
+
+  <div id="st-setup" class="acct-note" hidden>
+    <h2>Sign-in is not switched on here yet</h2>
+    <p>This copy of the page has no sign-in connection. It works on the published site once the owner has added the connection details (the setup steps are in the file named FIREBASE-SETUP).</p>
+  </div>
+
+  <div id="st-blocked" class="acct-note" hidden>
+    <h2>Sign-in could not load</h2>
+    <p>The sign-in service did not load. Some networks and browsers block it. Try again on another connection, or turn off any content blocker for this site.</p>
+  </div>
+
+  <div id="st-out" hidden>
+    <div class="acct-card">
+      <h2>Sign in to start</h2>
+      <p>We use Google only to know who you are. We never see your Google password, and we do not post anything to your account.</p>
+      <button type="button" class="btn" id="btn-in">Sign in with Google</button>
+      <p class="ferr" id="err-in" role="alert"></p>
+      <p class="priv">By signing in you agree to the <a href="terms.html">Terms</a> and the <a href="privacy.html">Privacy policy</a>.</p>
+    </div>
+  </div>
+
+  <div id="st-in" hidden>
+    <div class="acct-bar">
+      <span>Signed in as <strong id="who"></strong></span>
+      <button type="button" class="linkbtn" id="btn-out">Sign out</button>
+    </div>
+
+    <form class="rform" id="lf" novalidate>
+      <h2 id="lf-title">Add a laptop</h2>
+      <label for="f-name">Laptop name</label>
+      <input id="f-name" maxlength="80" placeholder="Lenovo LOQ 15IRX10" autocomplete="off" aria-describedby="e-name">
+      <p class="ferr" id="e-name"></p>
+
+      <label for="f-cpu">Processor</label>
+      <input id="f-cpu" maxlength="80" placeholder="Intel Core i7-13650HX" autocomplete="off" aria-describedby="e-cpu">
+      <p class="ferr" id="e-cpu"></p>
+
+      <label for="f-gpu">Graphics <span class="opt">(Optional)</span></label>
+      <input id="f-gpu" maxlength="80" placeholder="NVIDIA GeForce RTX 5050 8GB" autocomplete="off">
+
+      <label for="f-ram">Memory <span class="opt">(Optional)</span></label>
+      <input id="f-ram" maxlength="40" placeholder="16GB DDR5" autocomplete="off">
+
+      <label for="f-sto">Storage <span class="opt">(Optional)</span></label>
+      <input id="f-sto" maxlength="40" placeholder="512GB NVMe SSD" autocomplete="off">
+
+      <label for="f-scr">Screen <span class="opt">(Optional)</span></label>
+      <input id="f-scr" maxlength="60" placeholder='15.6" 1920x1080, 144Hz' autocomplete="off">
+
+      <label for="f-notes">Notes <span class="opt">(Optional)</span></label>
+      <textarea id="f-notes" rows="3" maxlength="500" placeholder="Bought in 2025. Battery lasts about 5 hours."></textarea>
+
+      <div class="rform-row">
+        <button type="submit" class="btn" id="f-save">Save laptop</button>
+        <button type="button" class="linkbtn" id="f-cancel" hidden>Cancel</button>
+        <span id="f-status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+
+    <h2 class="acct-h">Your laptops</h2>
+    <div id="empty" class="acct-note" hidden>
+      <p><strong>No laptops yet.</strong> Add the one you use most. You will see its specs listed here.</p>
+    </div>
+    <ul id="list" class="lap-list"></ul>
+  </div>
+</section>
+<footer>SyraTHS does not sell laptops, and it earns nothing when you click a store link. Buy buttons go to the store's own page or a search for that model. No ads and no tracking. Signing in is optional.<span class="legal-links"><br><a href="privacy.html">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms and conditions</a> &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="mailto:syrathsdev@gmail.com">syrathsdev@gmail.com</a></span></footer>
+</div>
+
+<script type="module">
+/* ===== Firebase connection. Replace the four PASTE_ values with yours (see FIREBASE-SETUP). ===== */
+const FIREBASE_CONFIG={
+  apiKey:"AIzaSyAu-1dFnlGL97dqSkbRPtniqbF_Pp_bTDM",
+  authDomain:"syraths.firebaseapp.com",
+  projectId:"syraths",
+  appId:"1:1013821156713:web:cc38568b9cb8348924a1f8"
+};
+/* ===== End of connection settings ===== */
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const STATES=["st-load","st-setup","st-blocked","st-out","st-in"];
+function show(id){STATES.forEach(s=>{$(s).hidden=(s!==id);});}
+const FIELDS=[["name","f-name"],["cpu","f-cpu"],["gpu","f-gpu"],["ram","f-ram"],["storage","f-sto"],["screen","f-scr"],["notes","f-notes"]];
+const LABELS=[["cpu","Processor"],["gpu","Graphics"],["ram","Memory"],["storage","Storage"],["screen","Screen"]];
+let editing=null,items=[],armed=null,api=null;
+
+function renderList(){
+  const list=$("list");list.innerHTML="";
+  $("empty").hidden=items.length>0;
+  items.forEach(it=>{
+    const li=document.createElement("li");li.className="lap";
+    const rows=LABELS.filter(([k])=>it[k]).map(([k,l])=>"<dt>"+l+"</dt><dd>"+esc(it[k])+"</dd>").join("");
+    const armedHere=armed===it.id;
+    li.innerHTML="<h3>"+esc(it.name)+"</h3><dl>"+rows+"</dl>"+(it.notes?'<p class="note">'+esc(it.notes)+"</p>":"")+
+      '<div class="lap-act">'+(armedHere
+        ?'<button type="button" class="btn danger" data-act="del-yes" data-id="'+it.id+'">Yes, delete</button><button type="button" class="btn quiet" data-act="del-no">No, keep it</button>'
+        :'<button type="button" class="btn ghost" data-act="edit" data-id="'+it.id+'">Edit</button><button type="button" class="linkbtn" data-act="del" data-id="'+it.id+'">Delete</button>')+"</div>";
+    list.appendChild(li);
+  });
+}
+function clearErr(){["e-name","e-cpu"].forEach(i=>{$(i).textContent="";});["f-name","f-cpu"].forEach(i=>$(i).removeAttribute("aria-invalid"));$("f-status").textContent="";$("f-status").className="";}
+function resetForm(){editing=null;$("lf").reset();clearErr();$("lf-title").textContent="Add a laptop";$("f-save").textContent="Save laptop";$("f-cancel").hidden=true;}
+function say(m,c){const s=$("f-status");s.textContent=m;s.className=c||"";}
+
+$("list").addEventListener("click",async(e)=>{
+  const b=e.target.closest("[data-act]");if(!b)return;
+  const act=b.getAttribute("data-act"),id=b.getAttribute("data-id");
+  if(act==="del"){armed=id;renderList();}
+  else if(act==="del-no"){armed=null;renderList();}
+  else if(act==="del-yes"){armed=null;try{await api.remove(id);}catch(err){say("Could not delete that. Please try again.","bad");}}
+  else if(act==="edit"){
+    const it=items.find(x=>x.id===id);if(!it)return;
+    editing=id;clearErr();FIELDS.forEach(([k,i])=>{$(i).value=it[k]||"";});
+    $("lf-title").textContent="Edit laptop";$("f-save").textContent="Save changes";$("f-cancel").hidden=false;
+    $("lf").scrollIntoView({behavior:"smooth",block:"start"});$("f-name").focus();
+  }
+});
+$("f-cancel").addEventListener("click",resetForm);
+$("lf").addEventListener("submit",async(e)=>{
+  e.preventDefault();clearErr();
+  const d={};FIELDS.forEach(([k,i])=>{d[k]=$(i).value.trim();});
+  let bad=false;
+  if(!d.name){$("e-name").textContent="Give the laptop a name so you can find it later.";$("f-name").setAttribute("aria-invalid","true");bad=true;}
+  if(!d.cpu){$("e-cpu").textContent="Add the processor model, for example Intel Core i7-13650HX.";$("f-cpu").setAttribute("aria-invalid","true");bad=true;}
+  if(bad){($("f-name").getAttribute("aria-invalid")?$("f-name"):$("f-cpu")).focus();return;}
+  $("f-save").disabled=true;say("Saving...");
+  try{
+    if(editing)await api.update(editing,d);else await api.add(d);
+    resetForm();say("Saved.","ok");
+  }catch(err){say("Could not save that. Check your connection and try again.","bad");}
+  finally{$("f-save").disabled=false;}
+});
+
+/* hooks used by tests */
+window.__ui={show,setItems(a){items=a;renderList();},setUser(n){$("who").textContent=n;}};
+
+const DEMO=false; /* build.py makes a demo copy with this set to true */
+function bootDemo(){
+  $("who").textContent="Demo visitor";
+  $("btn-out").hidden=true;
+  const bar=document.querySelector(".acct-bar");
+  const note=document.createElement("p");note.className="ferr";note.style.cssText="color:var(--accent);margin:0;flex-basis:100%";
+  note.textContent="Demo mode: nothing here is saved anywhere. Your list is lost when you close or refresh this page.";
+  bar.appendChild(note);
+  let n=0;
+  const stamp=()=>Date.now()*1000+(n++);
+  items=[];
+  const push=()=>{items.sort((a,b)=>b.at-a.at);renderList();};
+  api={
+    add:async d=>{items.push(Object.assign({id:"d"+(++n)},d,{at:stamp()}));push();},
+    update:async(id,d)=>{const i=items.findIndex(x=>x.id===id);if(i>=0)items[i]=Object.assign({id},d,{at:stamp()});push();},
+    remove:async id=>{items=items.filter(x=>x.id!==id);push();}
+  };
+  renderList();show("st-in");
+}
+async function boot(){
+  if(DEMO){bootDemo();return;}
+  if(!FIREBASE_CONFIG.apiKey||FIREBASE_CONFIG.apiKey.indexOf("PASTE_")===0){show("st-setup");return;}
+  try{
+    const base="https://www.gstatic.com/firebasejs/10.12.2/";
+    const [A,U,S]=await Promise.all([import(base+"firebase-app.js"),import(base+"firebase-auth.js"),import(base+"firebase-firestore.js")]);
+    const app=A.initializeApp(FIREBASE_CONFIG),auth=U.getAuth(app),fs=S.getFirestore(app);
+    let unsub=null;
+    $("btn-in").addEventListener("click",async()=>{
+      $("err-in").textContent="";
+      try{await U.signInWithPopup(auth,new U.GoogleAuthProvider());}
+      catch(err){
+        if(err&&(err.code==="auth/popup-blocked"||err.code==="auth/operation-not-supported-in-this-environment")){try{await U.signInWithRedirect(auth,new U.GoogleAuthProvider());return;}catch(e2){}}
+        if(err&&err.code==="auth/popup-closed-by-user")return;
+        $("err-in").textContent=err&&err.code==="auth/unauthorized-domain"?"This website address is not approved for sign-in yet. The site owner needs to add it in Firebase.":"Sign-in did not work. Please try again.";
+      }
+    });
+    $("btn-out").addEventListener("click",()=>U.signOut(auth));
+    U.onAuthStateChanged(auth,(user)=>{
+      if(unsub){unsub();unsub=null;}
+      resetForm();armed=null;
+      if(!user){items=[];api=null;show("st-out");return;}
+      $("who").textContent=user.displayName||user.email||"your account";
+      const col=S.collection(fs,"users",user.uid,"laptops");
+      api={
+        add:d=>S.addDoc(col,Object.assign({},d,{at:Date.now()})),
+        update:(id,d)=>S.updateDoc(S.doc(fs,"users",user.uid,"laptops",id),Object.assign({},d,{at:Date.now()})),
+        remove:id=>S.deleteDoc(S.doc(fs,"users",user.uid,"laptops",id))
+      };
+      unsub=S.onSnapshot(S.query(col,S.orderBy("at","desc")),(snap)=>{items=snap.docs.map(x=>Object.assign({id:x.id},x.data()));renderList();},()=>{say("Could not load your list.","bad");});
+      show("st-in");
+    });
+  }catch(err){show("st-blocked");}
+}
+boot();
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.rise').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i,6)*55)+'ms';io.observe(el);});
+</script>
+</body>
+</html>

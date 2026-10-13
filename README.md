@@ -1,71 +1,60 @@
-# Vyzeofficial.github.io
-# 🖥️ PC Performance & Buying Guide
+# SyraTHS
 
-Consumers are often misled by **deceptive marketing**, unclear specifications, and confusing product tiers. This makes it difficult to know whether a laptop or desktop is actually worth the money.  
-This project aims to fix that by providing clear, honest information about PC performance and pricing.
+Live site: https://vyzeofficial.github.io/
 
----
+SyraTHS is a free website that helps people read laptop listings before they buy. Listings are written to sell, and the words on them often do not match the hardware in the box. A "gaming laptop" may have no graphics card, a "12th generation processor" may be the slowest one in its family, and a crossed-out list price may never have been charged. This site explains what a listing says, points out what it leaves out, and shows whether a laptop can run the games and programs a buyer cares about.
 
-## 🎓 Capstone Project
+The site earns nothing from the laptops it links to. It has no ads and no analytics.
 
-This website is being developed as my **Senior Year High School Capstone Project**, showcasing real‑world problem solving, web development skills, and user‑focused design.
+## Capstone project
 
----
+This site is my senior year capstone project. It covers the full process of building a real tool: researching the problem, designing the pages, writing the code, testing it on real listings, and fixing what it got wrong.
 
-## 🎯 Project Overview
+## What is on the site
 
-We are creating a website that helps users:
+| Page | What it does |
+| --- | --- |
+| Home | Introduces the problem with an example listing and the claims in it that need a second look. |
+| Decoder | Explains a spec or a phrase from a listing in plain words, such as what "up to 18 hours" or a processor name means in daily use. |
+| Checker | Reads a pasted listing and flags claims that are vague, inflated or missing, with the reason for each. It also reads the specs it finds, shows what the laptop can run, and compares two listings side by side. |
+| Can it run? | Shows the minimum and recommended specs for 50 games and 50 programs and compares them with a pasted listing or a saved laptop. The answer is red, yellow or green. It also suggests laptops from Top laptops that would run the title. |
+| Top laptops | Laptops that review sites rated well for school, coding, creative work, gaming and travel, with specs, prices and the source for each. |
+| Evidence | Court cases, regulator findings and reviewer tests showing that misleading laptop listings are common. Visitors can send a report. |
+| My laptops | An optional page where a visitor signs in with Google and keeps a private list of their own laptops. |
+| About, Privacy policy, Terms | Who the site is for, where its data comes from, and how it handles information. |
 
-- 🔍 Understand real PC performance levels  
-- 💰 Compare price ranges and what they offer  
-- ⚡ Evaluate what a computer can actually do  
-- ✅ Make informed buying decisions without falling for marketing tricks  
+## How the answers are produced
 
-Our goal is to build a simple, reliable resource that cuts through the noise and helps users make smarter choices.
+- **Laptop picks** are not tested by us. Each one was named by a review site, and the price and specs come from the review linked under it.
+- **Game and program requirements** come from each publisher's own page. Every entry lists its source.
+- **Processor and graphics strength** comes from PassMark benchmark scores. Some scores are estimates, and the page says so.
+- **Results are estimates.** A benchmark score shows how hardware compares on paper. It cannot promise a frame rate, and the tools do not check the operating system or free disk space.
+- **The Checker reads text only.** It can tell when a listing is vague or missing something, but it cannot tell whether the claims are true.
 
----
+## Data and privacy
 
-## 🛠️ Tech Stack
+There is no account to make and nothing to install. Reading the site, including the Decoder and Checker, sends nothing about the visitor anywhere.
 
-- 🧱 **HTML** — page structure  
-- 🎨 **CSS** — layout and styling  
-- ⚙️ **JavaScript** — logic and interactivity  
-- 🖊️ **Visual Studio Code** — development environment  
-- 🌐 **GitHub** — version control and hosting  
-- 🖌️ **Figma** — UI/UX design and wireframes  
+Three features use Firebase, and only when the visitor chooses to use them:
 
----
+- Signing in with Google on My laptops, which stores that visitor's own laptop list.
+- The "Was this right?" question under results, which stores the answer, an optional note and, if the box is left ticked, the listing text.
+- The report form on the Evidence page.
 
-## 📦 Website Features
+The full details are in the privacy policy page. Setup steps for the Firebase rules are in `FIREBASE-SETUP.md`.
 
-### 💵 Price Categorization  
-Breakdowns of what each price range can realistically handle, from basic tasks to heavy workloads.
+## Built with
 
-### 📊 Performance Evaluation  
-Users can input their PC components (CPU, GPU, RAM, storage) and instantly see what their system can run.  
-This focuses on **capability**, not upgrades.
+- HTML, CSS and JavaScript, with no framework
+- Firebase Authentication and Firestore for sign-in, saved laptops, feedback and reports
+- Chakra Petch and Inter fonts from Google Fonts
+- Visual Studio Code for development and GitHub Pages for hosting
+- Figma for the early layout and wireframes
 
-### 🛒 Buying Guidance  
-Helps users understand what specs matter, how pricing aligns with performance needs, and what to look for when purchasing a computer.
+## Logos and trademarks
 
----
+Game and program logos and cover art belong to their owners. They are shown only to identify each title. SyraTHS is not connected to or endorsed by any of these companies.
 
-## 🧩 Planned Features
+## Contact
 
-- 🖥️ Component input fields  
-- 📈 Performance scoring system  
-- 📉 Price‑to‑performance charts  
-- 📚 Category explanations (budget → high‑end)  
-- 📱 Clean, responsive layout  
-- 🎨 UI designed in Figma  
-
----
-
-## 🧭 Roadmap
-
-- 📝 Research and planning  
-- 🎨 UI/UX design  
-- 🧱 Website structure (HTML/CSS)  
-- ⚙️ JavaScript logic and performance tools  
-- 🔍 Testing and refinement  
-- 🎓 Final Capstone presentation  
+Found a mistake or a listing the Checker gets wrong? Email syrathsdev@gmail.com, use the "Was this right?" question under a result, or send a report from the Evidence page.

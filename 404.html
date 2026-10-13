@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SyraTHS | Page not found</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%230a0b0d%22/%3E%3Cpath transform=%22translate%285.91 27.00%29 scale%280.03143 -0.03143%29%22 d=%22M50 108V208H184V149L217 116H424L458 150V266L425 299H160L52 407V592L160 700H476L584 592V491H450V551L417 584H219L186 551V448L219 415H484L592 307V110L482 0H158Z%22 fill=%22%236ab0e0%22/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b0d;--surface:#14161a;--surface-2:#1c1f25;--ink:#eef1f4;--muted:#aeb7c3;
+--line:#272c34;--green:#3fb986;--accent:#6ab0e0;--accent-dim:#11283b;--green-dim:#12331f;--red:#e0535f;--red-dim:#331318;
+--display:"Chakra Petch",sans-serif;--body:"Inter",sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6;}
+h1,h2,h3,.display{font-family:var(--display);}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent);}
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:20;}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px;}
+.logo{font-family:var(--display);font-weight:700;font-size:1.2rem;text-decoration:none;color:var(--ink);}
+.logo b{color:var(--accent);}
+nav .links{display:flex;gap:16px;font-size:0.86rem;}
+nav .links a{color:var(--muted);text-decoration:none;position:relative;padding:4px 0;transition:color .2s;}
+nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .25s ease;}
+nav .links a:hover::after,nav .links a.on::after{width:100%;}
+nav .links a:hover,nav .links a.on{color:var(--accent);}
+header.top{padding:66px 0 40px;border-bottom:1px solid var(--line);}
+h1 em{font-style:normal;color:var(--accent);}
+.lede{max-width:58ch;color:var(--muted);font-size:1.04rem;margin:0 0 30px;}
+section{padding:52px 0;border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+h2{font-size:1.55rem;margin:0 0 6px;}
+.section-note{color:var(--muted);max-width:62ch;margin:0 0 26px;}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:0.9rem;text-decoration:none;background:var(--accent);color:#06120b;padding:11px 20px;border-radius:7px;transition:transform .18s ease,box-shadow .18s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+footer{padding:36px 0 60px;color:var(--muted);font-size:0.83rem;}
+.rise{opacity:0;transform:translateY(10px);}
+.rise.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.3,1);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.rise,.seq{opacity:1!important;transform:none!important;}}
+h1{font-size:clamp(1.95rem,5.2vw,3.1rem);font-weight:700;line-height:1.1;margin:0 0 18px;max-width:19ch;}
+body{overflow-wrap:break-word;}
+.specs dd{overflow-wrap:anywhere;}
+nav .links a{padding:8px 0;}button.btn{border:0;cursor:pointer;font-family:var(--display);}
+
+/* shared polish: button space, readable small text, placeholders, field errors */
+.btn{padding:12px 26px;border-radius:7px;}
+button.btn:focus-visible,a.btn:focus-visible,.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+::placeholder{color:#7f8995;opacity:1;}
+.fine{font-size:0.78rem;}
+.fine .src,.price small,.cmp-table small,.cmp-rm,.tab-btn .n,.cmp-src{font-size:0.76rem;}
+.case .src{font-size:0.82rem;}
+.ferr{color:var(--red);font-size:0.82rem;margin:-10px 0 14px;min-height:0;}
+.ferr:empty{display:none;}
+.rform input[aria-invalid="true"],.rform textarea[aria-invalid="true"]{border-color:var(--red);}
+#rep-status.ok{color:var(--green);}
+#rep-status.bad{color:var(--red);}
+.rform .opt{color:var(--muted);font-weight:400;}
+.priv{font-size:0.8rem;color:var(--muted);margin:14px 0 0;max-width:62ch;}
+.rform{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;max-width:640px;}
+.rform label{display:block;font-size:0.85rem;color:var(--muted);margin:0 0 6px;}
+.rform input,.rform textarea{width:100%;padding:12px 14px;border-radius:7px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;margin:0 0 16px;}
+.rform textarea{resize:vertical;min-height:110px;}
+.rform input:focus,.rform textarea:focus{outline:none;border-color:var(--accent);}
+.rform-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.rform .btn[disabled]{opacity:.5;cursor:not-allowed;}
+#rep-status{font-size:0.88rem;color:var(--muted);}
+#rep-status.ok{color:var(--green);}
+#rep-status.bad{color:var(--red);}
+@media (max-width:640px){.rform{padding:16px;}}
+
+/* "Was this right?" feedback */
+.fb{margin:26px 0 0;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);}
+.fb-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.fb-q{font-family:var(--display);font-weight:600;margin-right:4px;}
+.fb-b{font-family:var(--body);font-size:0.9rem;padding:6px 16px;border-radius:7px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:border-color .15s,color .15s;}
+.fb-b:hover,.fb-b[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);}
+.fb-b:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.fb-b[disabled]{opacity:.55;cursor:default;}
+.fb-form{margin-top:12px;display:grid;gap:8px;}
+.fb-form[hidden]{display:none;}
+.fb-form label{font-size:0.88rem;color:var(--muted);}
+.fb-opt{font-size:0.78rem;opacity:.8;}
+.fb-form textarea{width:100%;resize:vertical;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-family:var(--body);font-size:0.92rem;}
+.fb-form textarea:focus{outline:none;border-color:var(--accent);}
+.fb-chk{display:flex;gap:8px;align-items:flex-start;}
+.fb-chk input{margin-top:4px;accent-color:var(--accent);}
+.fb-acts{display:flex;gap:12px;align-items:center;}
+.fb .linkbtn{background:none;border:0;padding:4px 2px;font-family:var(--body);font-size:0.9rem;color:var(--accent);text-decoration:underline;cursor:pointer;}
+.fb-msg{margin:8px 0 0;font-size:0.88rem;color:var(--muted);min-height:0;}
+.fb-msg:empty{display:none;}
+.fb-msg.ok{color:var(--green);}
+.fb-msg.bad{color:var(--red);}
+
+@media (max-width:640px){
+.wrap{padding:0 16px;}
+nav .wrap{flex-wrap:wrap;height:auto;padding-top:10px;padding-bottom:4px;gap:0 14px;}
+nav .links{width:100%;flex-wrap:wrap;gap:0 18px;font-size:0.9rem;}
+header.top{padding:34px 0 26px;}
+section{padding:32px 0;}
+.decoder{padding:16px;}
+.grid{grid-template-columns:1fr;}
+.bhead .cnt{margin-left:0;}
+.self{padding:16px;}
+.btn{padding:12px 16px;}
+.tab-btn{padding:10px 12px;}
+.pill,.chip{padding:8px 12px;}
+.case{padding:16px;}
+.flags{padding:6px 16px;}
+.step{padding:16px;}
+.fine a,.case .src a{display:inline-block;padding:8px 2px;}
+.btn,.pill,.chip,.tab-btn,.drop-toggle{min-height:40px;}
+}
+</style></head><body>
+<nav><div class="wrap">
+<a class="logo" href="index.html">Syra<b>THS</b></a>
+<div class="links"><a class="" href="index.html">Home</a><a class="" href="decoder.html">Decoder</a><a class="" href="checker.html">Checker</a><a class="" href="can-it-run.html">Can it run?</a><a class="" href="top-laptops.html">Top laptops</a><a class="" href="evidence.html">Evidence</a><a class="" href="my-laptops.html">My laptops</a></div>
+</div></nav>
+<div class="wrap"><header class="top"><h1>That page is not here.</h1><p class="lede">The link may be old or mistyped. These pages do exist:</p><p><a class="btn" href="index.html">Go to the home page</a> <a class="btn ghost" href="checker.html">Check a listing</a></p></header><footer>SyraTHS does not sell laptops, and it earns nothing when you click a store link. Buy buttons go to the store's own page or a search for that model. No ads and no tracking. Signing in is optional.<span class="legal-links"><br><a href="privacy.html">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms and conditions</a> &nbsp;&middot;&nbsp; <a href="about.html">About</a> &nbsp;&middot;&nbsp; <a href="mailto:syrathsdev@gmail.com">syrathsdev@gmail.com</a></span></footer></div>
+</body></html>

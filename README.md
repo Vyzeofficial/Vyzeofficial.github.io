@@ -6,9 +6,6 @@ SyraTHS is a free website that helps people read laptop listings before they buy
 
 The site earns nothing from the laptops it links to. It has no ads and no analytics.
 
-## Capstone project
-
-This site is my senior year capstone project. It covers the full process of building a real tool: researching the problem, designing the pages, writing the code, testing it on real listings, and fixing what it got wrong.
 
 ## What is on the site
 
